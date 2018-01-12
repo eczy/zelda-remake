@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Collector : MonoBehaviour {
 
+	public AudioClip rupee_collection_sound_clip;
+
 	Inventory inventory;
 
 	void Start ()
@@ -24,6 +26,9 @@ public class Collector : MonoBehaviour {
 			if (inventory != null)
 				inventory.AddRupees (1);
 			Destroy (object_collided_with);
+
+			// Play sound effect
+			AudioSource.PlayClipAtPoint (rupee_collection_sound_clip, Camera.main.transform.position);
 		}
 	}
 }
