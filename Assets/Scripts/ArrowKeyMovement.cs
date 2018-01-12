@@ -6,6 +6,7 @@ public class ArrowKeyMovement : MonoBehaviour {
 
 	// Inspector fields
 	public float movement_speed = 4;
+	bool disabled = false;
 
 	Rigidbody rb;
 
@@ -20,6 +21,10 @@ public class ArrowKeyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		if (disabled) {
+			return;
+		}
+		
 		Vector2 current_input = GetInput ();
 		rb.velocity = current_input * movement_speed;
 	}
@@ -41,5 +46,20 @@ public class ArrowKeyMovement : MonoBehaviour {
 			vertical_input = 0.0f;
 
 		return new Vector2 (horizontal_input, vertical_input);
+	}
+
+	public void DisableControls(){
+		disabled = true;
+		rb.velocity = Vector2.zero;
+		Debug.Log ("Controls disabled");
+	}
+
+	public void EnableControls(){
+		disabled = false;
+		Debug.Log ("Controls enabled");
+	}
+
+	public bool GetControlsDisabled(){
+		return disabled;
 	}
 }

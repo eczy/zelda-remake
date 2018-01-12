@@ -5,16 +5,30 @@ using UnityEngine;
 public class InputToAnimator : MonoBehaviour {
 
 	Animator animator;
+	ArrowKeyMovement controller;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
+		controller = GetComponent<ArrowKeyMovement> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		animator.SetFloat ("horizontal_input", Input.GetAxisRaw ("Horizontal"));
-		animator.SetFloat ("vertical_input", Input.GetAxisRaw ("Vertical"));
+		if (controller.GetControlsDisabled () == true) {
+			animator.speed = 0.0f;
+			return;
+		}
+		
+		float horizontal_input = Input.GetAxisRaw ("Horizontal");
+		float vertical_input = Input.GetAxisRaw ("Vertical");
+		
+		// Prevent confusing the animatior
+		if (Mathf.Abs (horizontal_input) > 0.0f)
+			vertical_input = 0.0f;
+		
+		animator.SetFloat ("horizontal_input", horizontal_input);
+		animator.SetFloat ("vertical_input", vertical_input);
 
 		if (Input.GetAxisRaw ("Horizontal") == 0 && Input.GetAxisRaw ("Vertical") == 0)
 		{

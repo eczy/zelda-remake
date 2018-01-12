@@ -5,6 +5,8 @@ using UnityEngine;
 public class InvincibleMode : MonoBehaviour {
 
 	public bool invincible = false;
+	public float toggle_delay = 5.0f;
+
 	Inventory inventory;
 	Health health;
 
@@ -26,6 +28,7 @@ public class InvincibleMode : MonoBehaviour {
 
 	void SetInvincible ()
 	{
+		Debug.Log ("Bestowing invincibility");
 		orig_rupees = inventory.GetRupees ();
 		orig_bombs = inventory.GetBombs ();
 		orig_keys = inventory.GetKeys ();
@@ -37,6 +40,7 @@ public class InvincibleMode : MonoBehaviour {
 
 	void RemoveInvincible ()
 	{
+		Debug.Log ("Removing invincibility");
 		inventory.SetRupees (orig_rupees);
 		inventory.SetBombs (orig_bombs);
 		inventory.SetKeys (orig_keys);
@@ -48,13 +52,10 @@ public class InvincibleMode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		float invincibility_input = Input.GetAxis ("Invincible");
-		if (invincibility_input > 0 && invincible)
-			RemoveInvincible ();
-		
-		else if (invincibility_input > 0 && !invincible)
-			SetInvincible ();
+		if (Input.GetKeyDown(KeyCode.Alpha1) && !invincible)
+			StartCoroutine ("SetInvincible");
+		else if (Input.GetKeyDown(KeyCode.Alpha1) && invincible)
+			StartCoroutine ("RemoveInvincible");
 
 		if (invincible == false)
 			return;
