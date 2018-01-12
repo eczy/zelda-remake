@@ -5,8 +5,11 @@ using UnityEngine;
 public class InvincibleMode : MonoBehaviour {
 
 	public bool invincible = false;
-
 	Inventory inventory;
+	Health health;
+
+	int orig_rupees, orig_bombs, orig_keys;
+	float orig_health;
 
 	void Start ()
 	{
@@ -14,28 +17,58 @@ public class InvincibleMode : MonoBehaviour {
 		inventory = GetComponent<Inventory> ();
 		if (inventory == null)
 			Debug.LogWarning ("WARNING: Player has no inventory!");
+
+		// Try to grab a reference to the health component on this gameobject.
+		health = GetComponent<Health> ();
+		if (health == null)
+			Debug.LogWarning ("WARNING: Player has no health!");
+	}
+
+	void SetInvincible ()
+	{
+		orig_rupees = inventory.GetRupees ();
+		orig_bombs = inventory.GetBombs ();
+		orig_keys = inventory.GetKeys ();
+
+		orig_health = health.GetHealth ();
+
+		invincible = true;
+	}
+
+	void RemoveInvincible ()
+	{
+		inventory.SetRupees (orig_rupees);
+		inventory.SetBombs (orig_bombs);
+		inventory.SetKeys (orig_keys);
+
+		health.SetHealth (orig_health);
+
+		invincible = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		float invincibility_input = Input.GetAxis ("Invincible");
+		if (invincibility_input > 0 && invincible)
+			RemoveInvincible ();
+		
+		else if (invincibility_input > 0 && !invincible)
+			SetInvincible ();
+
 		if (invincible == false)
 			return;
 		
-		int num_rupees = inventory.GetRupees ();
-		int num_bombs = inventory.GetBombs ();
-		int num_keys = inventory.GetKeys ();
+		if (inventory.GetRupees() != 255)
+			inventory.SetRupees (255);
 
-		if (num_rupees != 255) {
-			inventory.AddRupees (255 - num_rupees);
-		}
-		if (num_bombs != 16) {
-			inventory.AddBombs (16 - num_bombs);
-		}
-		if (num_keys != 255) {
-			inventory.AddKeys (255 - num_keys);
-		}
+		if (inventory.GetBombs() != 16)
+			inventory.SetBombs (16);
+		
+		if (inventory.GetKeys() != 255)
+			inventory.SetKeys (255);
 
-		// TODO: health management
+		if (health.GetHealth () < health.max_health)
+			health.SetHealth (health.max_health);
 	}
 }
