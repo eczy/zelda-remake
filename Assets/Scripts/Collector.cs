@@ -20,8 +20,7 @@ public class Collector : MonoBehaviour {
 	{
 		GameObject object_collided_with = coll.gameObject;
 
-		if (object_collided_with.tag == "rupee")
-		{
+		if (object_collided_with.tag == "rupee") {
 			// Check to see if inventory exists before adding rupee to it.
 			if (inventory != null)
 				inventory.AddRupees (1);
@@ -29,6 +28,9 @@ public class Collector : MonoBehaviour {
 
 			// Play sound effect
 			AudioSource.PlayClipAtPoint (rupee_collection_sound_clip, Camera.main.transform.position);
+		} else if (object_collided_with.tag == "heart") {
+			// TODO: health management
+			Destroy (object_collided_with);
 		}
 	}
 }
