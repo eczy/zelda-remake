@@ -55,7 +55,7 @@ public class ArrowKeyMovement : MonoBehaviour {
         if (Mathf.Abs(current_input.x) > 0.0f)
         {
             float decimal_part = transform.position.y % 1;
-            Debug.Log("y decimal is "+decimal_part);
+            //Debug.Log("y decimal is "+decimal_part);
             if (decimal_part > 0.6)
             {
                 temPosYChange.y = (float)Math.Truncate(transform.position.y) + 1;
@@ -66,10 +66,10 @@ public class ArrowKeyMovement : MonoBehaviour {
             }
             transform.position = temPosYChange;
         }
-        else if(Mathf.Abs(current_input.y) > 0.0f)
+        if(Mathf.Abs(current_input.y) > 0.0f)
         {
             float decimal_part = transform.position.x % 1;
-            Debug.Log("x decimal is " + decimal_part);
+            //Debug.Log("x decimal is " + decimal_part);
             if (decimal_part > 0.6)
             {
                 temPosXChange.x = (float)Math.Truncate(transform.position.x) + 1;
