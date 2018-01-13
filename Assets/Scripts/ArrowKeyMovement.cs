@@ -13,9 +13,6 @@ public class ArrowKeyMovement : MonoBehaviour {
     Vector3 temPosYChange;
     Vector3 temPosXChange;
 
-
-    public float movement_speed = 4;
-
 	// Use this for initialization
 	void Start ()
 	{
