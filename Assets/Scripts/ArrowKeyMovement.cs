@@ -13,27 +13,35 @@ public class ArrowKeyMovement : MonoBehaviour {
     Vector3 temPosYChange;
     Vector3 temPosXChange;
 
-	// Use this for initialization
-	void Start ()
+    public enum Direction {North,South,West,East};
+    public Direction linkDirection;
+    private Direction previousDirection = Direction.South;
+
+    // Use this for initialization
+    void Start ()
 	{
 		// Store a reference to the Rigidbody component on this game object.
 		// This prevents us from calling GetComponent() every frame, which saves performance
 		rb = GetComponent<Rigidbody> ();
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
 	    if (disabled) {
 		 return;
 	    }
+
         temPosYChange = transform.position;
         temPosXChange = transform.position;
         fixMovement();
-        //float centerX = Mathf.Round(transform.position.x + current_input.x);
-        //float centerY = Mathf.Round(transform.position.y + current_input.y);
-        //rb.position = new Vector2(centerX, centerY);
+
+        
         Vector2 current_input = GetInput ();
-		rb.velocity = current_input * movement_speed;
+        linkDirection = GetDirection(current_input);
+        previousDirection = linkDirection;
+        Debug.Log("link is facing " + linkDirection.ToString());
+        rb.velocity = current_input * movement_speed;
         
 
     }
@@ -48,6 +56,34 @@ public class ArrowKeyMovement : MonoBehaviour {
 
 		return new Vector2 (horizontal_input, vertical_input);
 	}
+
+    Direction GetDirection(Vector2 input)
+    {
+        //if no horiontal movement
+        if (input.x == 0)
+        {
+            if(input.y > 0)
+            {
+                return Direction.North;
+            }
+            else if(input.y < 0)
+            {
+                return Direction.South;
+            }
+        }
+        else
+        {
+            if (input.x > 0)
+            {
+                return Direction.East;
+            }
+            else if (input.x < 0)
+            {
+                return Direction.West;
+            }
+        }
+        return previousDirection;
+    }
 
     void fixMovement()
     {
@@ -66,7 +102,7 @@ public class ArrowKeyMovement : MonoBehaviour {
             }
             transform.position = temPosYChange;
         }
-        if(Mathf.Abs(current_input.y) > 0.0f)
+        if (Mathf.Abs(current_input.y) > 0.0f)
         {
             float decimal_part = transform.position.x % 1;
             //Debug.Log("x decimal is " + decimal_part);
