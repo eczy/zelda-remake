@@ -7,7 +7,7 @@ public class Restarter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Space))
-            SceneManager.LoadScene("Dungeon_eczy");
+            SceneManager.LoadScene("dungeon_master");
             
 	}
 }

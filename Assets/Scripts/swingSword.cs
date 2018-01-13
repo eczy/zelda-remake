@@ -12,7 +12,7 @@ public class swingSword : MonoBehaviour {
     private float currentHealth;
     private int max_health;
     private ArrowKeyMovement.Direction swingDirection;
-    private bool pressedX = false;
+    //private bool pressedX = false;
     // Use this for initialization
     void Start () {
         animator = gameObject.GetComponent<Animator>();
@@ -25,14 +25,16 @@ public class swingSword : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        pressedX = false;
-        //animator.SetBool("pressedX", false);
+        //pressedX = false;
+        animator.SetBool("pressedX", false);
         if (Input.GetKeyDown("x"))
         {
-            pressedX = true;
+            //pressedX = true;
             
             animator.SetBool("pressedX", true);
             Debug.Log("pressedX in animator is " + animator.GetBool("pressedX"));
+            //animator.SetFloat("horizontal_input", 0.0f);
+            //animator.SetFloat("vertical_input", 0.0f);
             if (currentHealth >= max_health)
             {
                 //sword flies
@@ -41,7 +43,7 @@ public class swingSword : MonoBehaviour {
             else
             {
                 //basic sword swing
-
+                
             }
         }
         

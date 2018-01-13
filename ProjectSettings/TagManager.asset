@@ -43,3 +43,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: enemy
+    uniqueID: 86297613
+    locked: 0
