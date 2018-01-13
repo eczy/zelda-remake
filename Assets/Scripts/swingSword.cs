@@ -4,24 +4,36 @@ using UnityEngine;
 
 public class swingSword : MonoBehaviour {
 
+    Animator animator;
     Health playerHealth;
     ArrowKeyMovement arrowkeymovement;
-
+    
+    
     private float currentHealth;
     private int max_health;
-	// Use this for initialization
-	void Start () {
+    private ArrowKeyMovement.Direction swingDirection;
+    private bool pressedX = false;
+    // Use this for initialization
+    void Start () {
+        animator = gameObject.GetComponent<Animator>();
         playerHealth = GetComponent<Health>();
         arrowkeymovement = GetComponent<ArrowKeyMovement>();
         currentHealth = playerHealth.GetHealth();
         max_health = playerHealth.max_health;
+        swingDirection = arrowkeymovement.linkDirection;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        pressedX = false;
+        //animator.SetBool("pressedX", false);
         if (Input.GetKeyDown("x"))
         {
-            if(currentHealth >= max_health)
+            pressedX = true;
+            
+            animator.SetBool("pressedX", true);
+            Debug.Log("pressedX in animator is " + animator.GetBool("pressedX"));
+            if (currentHealth >= max_health)
             {
                 //sword flies
 
@@ -32,7 +44,7 @@ public class swingSword : MonoBehaviour {
 
             }
         }
-
+        
     }
 
 
