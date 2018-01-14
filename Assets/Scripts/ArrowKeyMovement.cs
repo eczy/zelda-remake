@@ -92,13 +92,13 @@ public class ArrowKeyMovement : MonoBehaviour {
         {
             float decimal_part = transform.position.y % 1;
             //Debug.Log("y decimal is "+decimal_part);
-            if (decimal_part > 0.6)
+            if (decimal_part > 0.5)
             {
                 temPosYChange.y = (float)Math.Truncate(transform.position.y) + 1;
             }
-            else if(decimal_part < 0.25)
+            else if(decimal_part < 0.35)
             {
-                temPosYChange.y = (float)Math.Truncate(transform.position.y);
+                temPosYChange.y = (float)Math.Truncate(transform.position.y)+0.1f;
             }
             transform.position = temPosYChange;
         }
