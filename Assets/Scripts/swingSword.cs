@@ -42,7 +42,7 @@ public class swingSword : MonoBehaviour {
             if (currentHealth >= max_health)
             {
                 //sword flies
-
+				Debug.Log("damaging beam!");
             }
             else
             {
