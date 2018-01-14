@@ -9,7 +9,7 @@ public class swingSword : MonoBehaviour {
     ArrowKeyMovement arrowkeymovement;
 	Coroutine co_pause_controls;
 
-	public float control_disable_time = 0.5f;
+	public float control_disable_time = 0.1f;
 
     private float currentHealth;
     private int max_health;
