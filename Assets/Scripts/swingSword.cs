@@ -14,15 +14,16 @@ public class swingSword : MonoBehaviour {
 
 
 	public float control_disable_time = 0.5f;
-
+	public float reload_time = 0.5f;
     private float currentHealth;
     private int max_health;
     private ArrowKeyMovement.Direction swingDirection;
+	bool reloading = false;
     //private bool pressedX = false;
     // Use this for initialization
     void Awake () {
 		rb = GetComponent<Rigidbody> ();
-        animator = gameObject.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         playerHealth = GetComponent<Health>();
         arrowkeymovement = GetComponent<ArrowKeyMovement>();
         currentHealth = playerHealth.GetHealth();
@@ -38,9 +39,9 @@ public class swingSword : MonoBehaviour {
         //pressedX = false;
         animator.SetBool("pressedX", false);
 		changeFaceDirectionBool();
-		SwordGO.GetComponent<Renderer> ().enabled = false;
-		SwordGO.GetComponent<BoxCollider> ().enabled = false;
-        if (Input.GetKeyDown("x"))
+		//SwordGO.GetComponent<Renderer> ().enabled = false;
+		//SwordGO.GetComponent<BoxCollider> ().enabled = false;
+		if (Input.GetKeyDown("x") && !reloading)
         { 
             animator.SetBool("pressedX", true);
 			//Debug.Log ("current health is" + currentHealth);
@@ -77,15 +78,27 @@ public class swingSword : MonoBehaviour {
 	}
 
 	IEnumerator AnimateSword(float rotation, float verticalMove){
-		SwordGO.GetComponent<Renderer> ().enabled = true;
-		SwordGO.GetComponent<BoxCollider> ().enabled = true;
+		
 		WeaponGO.transform.rotation = Quaternion.Euler (0, 0, rotation);
 		WeaponGO.transform.position = new Vector3 (transform.position.x,
 			transform.position.y + verticalMove, transform.position.z);
 		arrowkeymovement.DisableControls ();
+		reloading = true;
+		animator.enabled = false;
+		StartCoroutine(Reload ());
 		yield return new WaitForSeconds (control_disable_time);
 		SwordGO.GetComponent<Renderer> ().enabled = false; 
+		animator.enabled = true;
 		arrowkeymovement.EnableControls ();
+	}
+
+	IEnumerator Reload (){
+		SwordGO.GetComponent<Renderer> ().enabled = true;
+		SwordGO.GetComponent<BoxCollider> ().enabled = true;
+		yield return new WaitForSeconds (reload_time);
+		SwordGO.GetComponent<Renderer> ().enabled = false;
+		SwordGO.GetComponent<BoxCollider> ().enabled = false;
+		reloading = false;
 	}
 
 	//heal up link by 1 if he picks up hearts
