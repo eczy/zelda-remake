@@ -1,0 +1,428 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!91 &9100000
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PlayerAnimationController
+  serializedVersion: 5
+  m_AnimatorParameters:
+  - m_Name: horizontal_input
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+<<<<<<< HEAD
+    m_Controller: {fileID: 9100000}
+=======
+    m_Controller: {fileID: 0}
+>>>>>>> dungeon_eddie
+  - m_Name: vertical_input
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+<<<<<<< HEAD
+    m_Controller: {fileID: 9100000}
+  m_AnimatorLayers:
+  - serializedVersion: 5
+    m_Name: Base Layer
+    m_StateMachine: {fileID: 1107573028299487712}
+=======
+    m_Controller: {fileID: 0}
+  m_AnimatorLayers:
+  - serializedVersion: 5
+    m_Name: Base Layer
+    m_StateMachine: {fileID: 1107008090537516548}
+>>>>>>> dungeon_eddie
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+<<<<<<< HEAD
+--- !u!1101 &1101006008814274652
+=======
+--- !u!1101 &1101154592733438154
+>>>>>>> dungeon_eddie
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+<<<<<<< HEAD
+  - m_ConditionMode: 3
+    m_ConditionEvent: horizontal_input
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102370590342408008}
+=======
+  - m_ConditionMode: 4
+    m_ConditionEvent: vertical_input
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102466300714621272}
+>>>>>>> dungeon_eddie
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75000006
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 0
+<<<<<<< HEAD
+--- !u!1101 &1101390074022970138
+=======
+--- !u!1101 &1101245524691555992
+>>>>>>> dungeon_eddie
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 4
+<<<<<<< HEAD
+    m_ConditionEvent: vertical_input
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102454689475856776}
+=======
+    m_ConditionEvent: horizontal_input
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102316912561021294}
+>>>>>>> dungeon_eddie
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75000006
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 0
+<<<<<<< HEAD
+--- !u!1101 &1101399554958419956
+=======
+--- !u!1101 &1101523314980323740
+>>>>>>> dungeon_eddie
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+<<<<<<< HEAD
+  - m_ConditionMode: 4
+    m_ConditionEvent: horizontal_input
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102934366497482880}
+=======
+  - m_ConditionMode: 3
+    m_ConditionEvent: horizontal_input
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102844447411046110}
+>>>>>>> dungeon_eddie
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75000006
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 0
+<<<<<<< HEAD
+--- !u!1101 &1101523007041106336
+=======
+--- !u!1101 &1101919991076778288
+>>>>>>> dungeon_eddie
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: vertical_input
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+<<<<<<< HEAD
+  m_DstState: {fileID: 1102274890883359616}
+=======
+  m_DstState: {fileID: 1102631069201840284}
+>>>>>>> dungeon_eddie
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75000006
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 0
+<<<<<<< HEAD
+--- !u!1102 &1102274890883359616
+=======
+--- !u!1102 &1102316912561021294
+>>>>>>> dungeon_eddie
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
+  m_Name: run_up
+=======
+  m_Name: run_left
+>>>>>>> dungeon_eddie
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+<<<<<<< HEAD
+  m_Motion: {fileID: 7400000, guid: cb860ce54b671482db7bfe7b26f71c6f, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: c3adfb7d8fa974d4db3582ad87c03e70, type: 2}
+>>>>>>> dungeon_eddie
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+<<<<<<< HEAD
+--- !u!1102 &1102370590342408008
+=======
+--- !u!1102 &1102466300714621272
+>>>>>>> dungeon_eddie
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
+  m_Name: run_right
+=======
+  m_Name: run_down
+>>>>>>> dungeon_eddie
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+<<<<<<< HEAD
+  m_Motion: {fileID: 7400000, guid: b01ec3b7bf12c4fee81d5a6fe97cd3c0, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: d8076b8e01cca954cbbefb70cb231baa, type: 2}
+>>>>>>> dungeon_eddie
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+<<<<<<< HEAD
+--- !u!1102 &1102454689475856776
+=======
+--- !u!1102 &1102631069201840284
+>>>>>>> dungeon_eddie
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
+  m_Name: run_down
+=======
+  m_Name: run_up
+>>>>>>> dungeon_eddie
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+<<<<<<< HEAD
+  m_Motion: {fileID: 7400000, guid: f9d21f71ab85b46d7ab7b815e9f574ed, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 447408c816eaccd4ab4073f9d89d4830, type: 2}
+>>>>>>> dungeon_eddie
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+<<<<<<< HEAD
+--- !u!1102 &1102934366497482880
+=======
+--- !u!1102 &1102777587076765860
+>>>>>>> dungeon_eddie
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
+  m_Name: run_left
+=======
+  m_Name: attack_down
+>>>>>>> dungeon_eddie
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+<<<<<<< HEAD
+  m_Motion: {fileID: 7400000, guid: e2c80785f5fc68d4f8f3c67d2722f8c5, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 920138f8da64888499b7798253d0c093, type: 2}
+>>>>>>> dungeon_eddie
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+<<<<<<< HEAD
+--- !u!1107 &1107573028299487712
+=======
+--- !u!1102 &1102844447411046110
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: run_right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 798501d5c1ed59b4f9c8fd509ef47922, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1107 &1107008090537516548
+>>>>>>> dungeon_eddie
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Base Layer
+  m_ChildStates:
+  - serializedVersion: 1
+<<<<<<< HEAD
+    m_State: {fileID: 1102454689475856776}
+    m_Position: {x: 0, y: 204, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102370590342408008}
+    m_Position: {x: 408, y: 204, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102274890883359616}
+    m_Position: {x: 204, y: 204, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102934366497482880}
+    m_Position: {x: 612, y: 204, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions:
+  - {fileID: 1101390074022970138}
+  - {fileID: 1101006008814274652}
+  - {fileID: 1101523007041106336}
+  - {fileID: 1101399554958419956}
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 0, y: 12, z: 0}
+  m_EntryPosition: {x: 228, y: 12, z: 0}
+  m_ExitPosition: {x: 120, y: -60, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 1102454689475856776}
+=======
+    m_State: {fileID: 1102466300714621272}
+    m_Position: {x: 132, y: 144, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102844447411046110}
+    m_Position: {x: -36, y: 204, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102316912561021294}
+    m_Position: {x: -252, y: 204, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102631069201840284}
+    m_Position: {x: -324, y: 120, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102777587076765860}
+    m_Position: {x: 108, y: -24, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions:
+  - {fileID: 1101154592733438154}
+  - {fileID: 1101523314980323740}
+  - {fileID: 1101245524691555992}
+  - {fileID: 1101919991076778288}
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: -60, y: 60, z: 0}
+  m_EntryPosition: {x: 264, y: 84, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 1102466300714621272}
+>>>>>>> dungeon_eddie

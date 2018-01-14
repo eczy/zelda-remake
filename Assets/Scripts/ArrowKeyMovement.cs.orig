@@ -1,0 +1,142 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+using System;
+>>>>>>> dungeon_eddie
+using UnityEngine;
+
+public class ArrowKeyMovement : MonoBehaviour {
+
+<<<<<<< HEAD
+	// Inspector fields
+	public float movement_speed = 4;
+	bool disabled = false;
+
+	Rigidbody rb;
+
+	// Use this for initialization
+	void Start ()
+	{
+		// Store a reference to the Rigidbody component on this game object.
+		// This prevents us from calling GetComponent() every frame, which saves performance
+		rb = GetComponent<Rigidbody> ();
+	}
+	
+	// Update is called once per frame
+	void Update ()
+	{
+		if (disabled) {
+			return;
+		}
+		
+		Vector2 current_input = GetInput ();
+		rb.velocity = current_input * movement_speed;
+	}
+	 
+	Vector2 GetInput ()
+	{
+		// The following Input.GetAxis calls make use of the Unity InputManager.
+		// The InputManager allows us to standardize controls without hard-coding specific keys or buttons
+		// For instance, the code below would work with a keyboard, OR a controller, without changes!
+		// Read up here: https://docs.unity3d.com/Manual/class-InputManager.html
+
+		// Grab the current value of the right-left arrow keys.
+		float horizontal_input = Input.GetAxisRaw ("Horizontal");
+		// Grab the current value of the up-down arrow keys.
+		float vertical_input = Input.GetAxisRaw ("Vertical");
+
+		// Don't allow diagonal movement.
+		if (Mathf.Abs (horizontal_input) > 0.0f)
+			vertical_input = 0.0f;
+=======
+	Rigidbody rb;
+    Vector3 temPosYChange;
+    Vector3 temPosXChange;
+
+
+    public float movement_speed = 4;
+
+	// Use this for initialization
+	void Start () {
+		rb = GetComponent<Rigidbody> ();
+        
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        temPosYChange = transform.position;
+        temPosXChange = transform.position;
+        fixMovement();
+        //float centerX = Mathf.Round(transform.position.x + current_input.x);
+        //float centerY = Mathf.Round(transform.position.y + current_input.y);
+        //rb.position = new Vector2(centerX, centerY);
+        Vector2 current_input = GetInput ();
+		rb.velocity = current_input * movement_speed;
+        
+
+    }
+
+	Vector2 GetInput(){
+		float horizontal_input = Input.GetAxisRaw ("Horizontal");
+		float vertical_input = Input.GetAxisRaw ("Vertical");
+
+		if (Mathf.Abs (horizontal_input) > 0.0f) {
+			vertical_input = 0.0f;
+		}
+>>>>>>> dungeon_eddie
+
+		return new Vector2 (horizontal_input, vertical_input);
+	}
+
+<<<<<<< HEAD
+	public void DisableControls(){
+		disabled = true;
+		rb.velocity = Vector2.zero;
+		Debug.Log ("Controls disabled");
+	}
+
+	public void EnableControls(){
+		disabled = false;
+		Debug.Log ("Controls enabled");
+	}
+
+	public bool GetControlsDisabled(){
+		return disabled;
+	}
+=======
+    void fixMovement()
+    {
+        Vector2 current_input = GetInput();
+        if (Mathf.Abs(current_input.x) > 0.0f)
+        {
+            float decimal_part = transform.position.y % 1;
+            Debug.Log("y decimal is "+decimal_part);
+            if (decimal_part > 0.6)
+            {
+                temPosYChange.y = (float)Math.Truncate(transform.position.y) + 1;
+            }
+            else if(decimal_part < 0.25)
+            {
+                temPosYChange.y = (float)Math.Truncate(transform.position.y);
+            }
+            transform.position = temPosYChange;
+        }
+        else if(Mathf.Abs(current_input.y) > 0.0f)
+        {
+            float decimal_part = transform.position.x % 1;
+            Debug.Log("x decimal is " + decimal_part);
+            if (decimal_part > 0.6)
+            {
+                temPosXChange.x = (float)Math.Truncate(transform.position.x) + 1;
+            }
+            else if (decimal_part < 0.25)
+            {
+                temPosXChange.x = (float)Math.Truncate(transform.position.x);
+            }
+            transform.position = temPosXChange;
+        }
+        return;
+    }
+>>>>>>> dungeon_eddie
+}

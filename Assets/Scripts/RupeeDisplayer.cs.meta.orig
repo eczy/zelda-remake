@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 28384dba3fab54e76bb8f6c5bebeab69
+timeCreated: 1515709687
+=======
+guid: 1bea7e2dd9145ab47972097559a32128
+timeCreated: 1515713011
+>>>>>>> dungeon_eddie
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

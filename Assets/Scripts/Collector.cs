@@ -30,14 +30,16 @@ public class Collector : MonoBehaviour {
 			// Check to see if inventory exists before adding rupee to it.
 			if (inventory != null)
 				inventory.AddRupees (1);
-			Destroy (object_collided_with);
 
 			// Play sound effect
 			AudioSource.PlayClipAtPoint (rupee_collection_sound_clip, Camera.main.transform.position);
 		} else if (object_collided_with.tag == "heart") {
 			if (health != null)
-				health.Heal(1);
-			Destroy (object_collided_with);
+				health.Heal (1);
+		} else if (object_collided_with.tag == "key") {
+			if (inventory != null)
+				inventory.AddKeys (1);
 		}
+		Destroy (object_collided_with);
 	}
 }

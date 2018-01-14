@@ -6,11 +6,13 @@ public class InputToAnimator : MonoBehaviour {
 
 	Animator animator;
 	ArrowKeyMovement controller;
+	Health health;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
 		controller = GetComponent<ArrowKeyMovement> ();
+		health = GetComponent<Health> ();
 	}
 	
 	// Update is called once per frame
@@ -38,6 +40,5 @@ public class InputToAnimator : MonoBehaviour {
 		{
 			animator.speed = 1.0f;
 		}
-		
 	}
 }

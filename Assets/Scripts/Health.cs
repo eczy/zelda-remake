@@ -14,6 +14,7 @@ public class Health : MonoBehaviour {
 
 	ArrowKeyMovement controller;
 	Rigidbody rb;
+	FlashWhenDamaged flash;
 	Coroutine co_recover;
 	Coroutine co_pause_controls;
 	bool recovering = false;
@@ -22,6 +23,7 @@ public class Health : MonoBehaviour {
 	{
 		controller = GetComponent<ArrowKeyMovement> ();
 		rb = GetComponent<Rigidbody> ();
+		flash = GetComponent<FlashWhenDamaged> ();
 	}
 
 	void OnCollisionEnter (Collision coll)
@@ -76,6 +78,8 @@ public class Health : MonoBehaviour {
 	IEnumerator Recover()
 	{
 		recovering = true;
+		if (flash != null)
+			flash.Flash (recovery_time);
 		yield return new WaitForSeconds (recovery_time);
 		recovering = false;
 	}
