@@ -10,7 +10,8 @@ public class Bow : MonoBehaviour {
 	public Rigidbody arrow_down;
 	public Rigidbody arrow_left;
 	public Rigidbody arrow_right;
-	public float reload_time = 0.25f;
+	public float reload_time = 1.0f;
+	public float control_delay = 0.25f;
 
 	ArrowKeyMovement controller;
 	Inventory inventory;
@@ -59,9 +60,13 @@ public class Bow : MonoBehaviour {
 		Rigidbody spawned_arrow = Instantiate (arrow, transform.position + forward * spawn_distance, transform.rotation);
 		spawned_arrow.velocity = forward * arrow_speed;
 
-
+		StartCoroutine(RestoreControls ());
 		yield return new WaitForSeconds(reload_time);
 		reloading = false;
-		controller.EnableControls();
+	}
+
+	IEnumerator RestoreControls (){
+		yield return new WaitForSeconds (control_delay);
+		controller.EnableControls ();
 	}
 }
