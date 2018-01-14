@@ -33,7 +33,7 @@ public class enemyMovement : MonoBehaviour {
 
   
 
-    private void OnCollisionStay(Collision coll)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         if (xDirection == -1)
         {
