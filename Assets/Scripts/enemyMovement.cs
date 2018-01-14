@@ -28,7 +28,7 @@ public class enemyMovement : MonoBehaviour {
         xDirection = direction.x;
         yDirection = direction.y;
         rb.velocity = direction * movement_speed;
-        Debug.Log(direction.ToString());
+        //Debug.Log(direction.ToString());
     }
 
   
@@ -37,7 +37,7 @@ public class enemyMovement : MonoBehaviour {
     {
         if (xDirection == -1)
         {
-            Debug.Log("inside xDirection left");
+            //Debug.Log("inside xDirection left");
             System.Random r = new System.Random();
             randomNumber = r.Next(1, 4); // creates a number between 1 and 3
             
@@ -61,7 +61,7 @@ public class enemyMovement : MonoBehaviour {
         }
         if(xDirection == 1)
         {
-            Debug.Log("inside xDirection right");
+            //Debug.Log("inside xDirection right");
             System.Random r = new System.Random();
             randomNumber = r.Next(1, 4); // creates a number between 1 and 3
             if (randomNumber == 1)
@@ -83,7 +83,7 @@ public class enemyMovement : MonoBehaviour {
         }
         if(yDirection == 1)
         {
-            Debug.Log("inside yDirection right");
+            //Debug.Log("inside yDirection right");
             System.Random r = new System.Random();
             randomNumber = r.Next(1, 4); // creates a number between 1 and 3
             if (randomNumber == 1)
@@ -104,7 +104,7 @@ public class enemyMovement : MonoBehaviour {
         }
         if(yDirection == -1)
         {
-            Debug.Log("inside yDirection left");
+            //Debug.Log("inside yDirection left");
             System.Random r = new System.Random();
             randomNumber = r.Next(1, 4); // creates a number between 1 and 3
             if (randomNumber == 1)
