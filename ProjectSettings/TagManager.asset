@@ -7,6 +7,7 @@ TagManager:
   - rupee
   - heart
   - key
+  - arrow
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - 
   - enemy
-  - 
+  - flying weapons
   - 
   - 
   - 
