@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour {
 
 	public void SetRupees(int num_rupees)
 	{
+		if (num_rupees < 0)
+			num_rupees = 0;
 		rupee_count = num_rupees;
 	}
 
@@ -30,6 +32,8 @@ public class Inventory : MonoBehaviour {
 
 	public void SetBombs(int num_bombs)
 	{
+		if (num_bombs < 0)
+			num_bombs = 0;
 		bomb_count = num_bombs;
 	}
 
@@ -45,6 +49,8 @@ public class Inventory : MonoBehaviour {
 
 	public void SetKeys(int num_keys)
 	{
+		if (num_keys < 0)
+			num_keys = 0;
 		key_count = num_keys;
 	}
 
