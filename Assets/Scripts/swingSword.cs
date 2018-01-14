@@ -8,12 +8,12 @@ public class swingSword : MonoBehaviour {
 	Rigidbody rb;
     Health playerHealth;
     ArrowKeyMovement arrowkeymovement;
-	Coroutine co_pause_controls;
+
 	GameObject WeaponGO;
 	GameObject SwordGO;
 
 
-	public float control_disable_time = 0.1f;
+	public float control_disable_time = 0.5f;
 
     private float currentHealth;
     private int max_health;
@@ -29,6 +29,8 @@ public class swingSword : MonoBehaviour {
         max_health = playerHealth.max_health;
 		WeaponGO = GameObject.Find ("Weapon");
 		SwordGO = GameObject.Find ("Sword");
+		SwordGO.GetComponent<Renderer> ().enabled = false;
+		SwordGO.GetComponent<BoxCollider> ().enabled = false;
     }
 	
 	// Update is called once per frame
@@ -36,7 +38,9 @@ public class swingSword : MonoBehaviour {
         //pressedX = false;
         animator.SetBool("pressedX", false);
 		changeFaceDirectionBool();
-        if (Input.GetKey("x"))
+		SwordGO.GetComponent<Renderer> ().enabled = false;
+		SwordGO.GetComponent<BoxCollider> ().enabled = false;
+        if (Input.GetKeyDown("x"))
         { 
             animator.SetBool("pressedX", true);
 			//Debug.Log ("current health is" + currentHealth);
@@ -49,12 +53,32 @@ public class swingSword : MonoBehaviour {
 
 	void LinkAttack(){
 		switch(swingDirection){
-
+		case ArrowKeyMovement.Direction.South:
+			{
+				StartCoroutine (AnimateSword (0f, 0f));
+				break;
+			}
+		case ArrowKeyMovement.Direction.West:
+			{
+				StartCoroutine (AnimateSword (-90f, 0f));
+				break; 
+			}
+		case ArrowKeyMovement.Direction.East:
+			{
+				StartCoroutine (AnimateSword (90f, -0.2f));
+				break; 
+			}
+		case ArrowKeyMovement.Direction.North:
+			{
+				StartCoroutine (AnimateSword (180f, 0f));
+				break; 
+			}
 		}
 	}
 
 	IEnumerator AnimateSword(float rotation, float verticalMove){
 		SwordGO.GetComponent<Renderer> ().enabled = true;
+		SwordGO.GetComponent<BoxCollider> ().enabled = true;
 		WeaponGO.transform.rotation = Quaternion.Euler (0, 0, rotation);
 		WeaponGO.transform.position = new Vector3 (transform.position.x,
 			transform.position.y + verticalMove, transform.position.z);
