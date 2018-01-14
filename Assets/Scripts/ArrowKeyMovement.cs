@@ -17,6 +17,21 @@ public class ArrowKeyMovement : MonoBehaviour {
     public Direction linkDirection;
     private Direction previousDirection = Direction.South;
 
+	public Vector3 Forward() {
+		switch (linkDirection) {
+		case (Direction.North):
+			return new Vector3 (0, 1, 0);
+		case(Direction.East):
+			return new Vector3 (1, 0, 0);
+		case (Direction.South):
+			return new Vector3 (0, -1, 0);
+		case (Direction.West):
+			return new Vector3 (-1, 0, 0);
+		default:
+			return new Vector3 (0, 0, 0);
+		}
+	}
+
     // Use this for initialization
     void Start ()
 	{
@@ -40,7 +55,6 @@ public class ArrowKeyMovement : MonoBehaviour {
         Vector2 current_input = GetInput ();
         linkDirection = GetDirection(current_input);
         previousDirection = linkDirection;
-        Debug.Log("link is facing " + linkDirection.ToString());
         rb.velocity = current_input * movement_speed;
         
 
