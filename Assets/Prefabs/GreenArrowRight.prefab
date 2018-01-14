@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65548677957814502}
   - component: {fileID: 114286991979090912}
   m_Layer: 0
-  m_Name: GreenArrowLeft
+  m_Name: GreenArrowRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
