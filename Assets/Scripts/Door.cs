@@ -5,8 +5,10 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 	public bool locked = false;
 
+	public GameObject main_camera;
 	public GameObject[] locked_door;
 	public GameObject[] unlocked_door;
+	public GameObject[] transition_triggers;
 
 	public void Unlock ()
 	{
