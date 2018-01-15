@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bow : MonoBehaviour {
 
-	public float arrow_speed;
+	public float arrow_speed=10f;
 	public float spawn_distance;
 	public Rigidbody arrow_up;
 	public Rigidbody arrow_down;

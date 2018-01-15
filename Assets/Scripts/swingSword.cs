@@ -41,7 +41,7 @@ public class swingSword : MonoBehaviour {
 		changeFaceDirectionBool();
 		//SwordGO.GetComponent<Renderer> ().enabled = false;
 		//SwordGO.GetComponent<BoxCollider> ().enabled = false;
-		if (Input.GetKeyDown("x") && !reloading)
+		if (Input.GetKeyDown("x") && !reloading && (playerHealth.GetHealth()<playerHealth.max_health))
         { 
             animator.SetBool("pressedX", true);
 			//Debug.Log ("current health is" + currentHealth);

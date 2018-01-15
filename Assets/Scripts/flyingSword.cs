@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bow : MonoBehaviour {
+public class flyingSword : MonoBehaviour {
 
 	public float sword_speed;
 	public float spawn_distance;
@@ -20,6 +20,7 @@ public class Bow : MonoBehaviour {
 	ArrowKeyMovement controller;
 	Inventory inventory;
 	SpriteRenderer renderer;
+	Health playerHealth;
 	Animator animator;
 	bool reloading = false;
 
@@ -29,11 +30,12 @@ public class Bow : MonoBehaviour {
 		inventory = GetComponent<Inventory> ();
 		renderer = GetComponent<SpriteRenderer> ();
 		animator = GetComponent<Animator> ();
+		playerHealth = GetComponent<Health> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Z) && !reloading) {
+		if (Input.GetKeyDown (KeyCode.X) && !reloading && (playerHealth.GetHealth()==playerHealth.max_health)) {
 			StartCoroutine(Shoot ());
 		}
 	}
