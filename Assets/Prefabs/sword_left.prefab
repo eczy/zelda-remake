@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4207697437705262}
   - component: {fileID: 212181067476795096}
   - component: {fileID: 65816516988303188}
-  m_Layer: 0
+  - component: {fileID: 54391200421598136}
+  m_Layer: 9
   m_Name: sword_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +42,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54391200421598136
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1823014292602890}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!65 &65816516988303188
 BoxCollider:
   m_ObjectHideFlags: 1

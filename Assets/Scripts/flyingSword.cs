@@ -42,16 +42,9 @@ public class flyingSword : MonoBehaviour {
 
 	IEnumerator Shoot ()
 	{
-		int rupees = inventory.GetRupees ();
-		if (rupees == 0) {
-			Debug.Log ("Cannot shoot swords with no rupees");
-			yield break;
-		}
-
 		controller.DisableControls ();
 		reloading = true;
 
-		inventory.SetRupees (rupees - 1);
 		Vector3 forward = controller.Forward ();
 		Transform transform = GetComponent<Transform> ();
 
