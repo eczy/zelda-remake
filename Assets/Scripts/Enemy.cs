@@ -46,7 +46,10 @@ public class Enemy : MonoBehaviour {
 		} else if (other.GetComponent<Sword> () != null) {
 			Debug.Log ("Enemy hit by sword");
 			Damage (sword_damage);
-			Destroy (other);
+
+			// Destroy if it is a magic sword beam
+			if (other.GetComponent<Rigidbody> () != null)
+				Destroy (other);
 		}
 
 		Vector3 dir = transform.position - other.transform.position;

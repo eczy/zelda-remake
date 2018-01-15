@@ -18,6 +18,6 @@ public class HealthDisplayer : MonoBehaviour {
 	void Update ()
 	{
 		if (health != null && text_component != null)
-			text_component.text = "Health: " + health.GetHealth ();
+			text_component.text = "Health: " + health.GetHealth () + "/" + health.max_health;
 	}
 }

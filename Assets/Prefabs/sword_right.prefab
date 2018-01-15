@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 212160838593773134}
   - component: {fileID: 65375064530005892}
   - component: {fileID: 54085564612952162}
-  - component: {fileID: 114266993092292716}
+  - component: {fileID: 114773419212602732}
+  - component: {fileID: 114629563510731050}
   m_Layer: 0
   m_Name: sword_right
   m_TagString: Untagged
@@ -70,7 +71,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.19840336, z: 0.2}
   m_Center: {x: 0, y: 0.005977392, z: 0}
---- !u!114 &114266993092292716
+--- !u!114 &114629563510731050
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,6 +80,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fca21d32fe30e46678a3646ba9aca758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114773419212602732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628415778396676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd9ed86def601e498c4d867dd004d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212160838593773134
@@ -114,7 +126,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300240, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

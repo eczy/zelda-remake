@@ -62,33 +62,29 @@ public class swingSword : MonoBehaviour {
 		switch(swingDirection){
 		case ArrowKeyMovement.Direction.South:
 			{
-				StartCoroutine (AnimateSword (0f, 0f,original_sprite));
-				renderer.sprite = shoot_down_sprite;
+				StartCoroutine (AnimateSword (0f, 0f,original_sprite,shoot_down_sprite));
 				break;
 			}
 		case ArrowKeyMovement.Direction.West:
 			{
-				StartCoroutine (AnimateSword (-90f, 0f,original_sprite));
-				renderer.sprite = shoot_left_sprite;
+				StartCoroutine (AnimateSword (-90f, 0f,original_sprite,shoot_left_sprite));
 				break; 
 			}
 		case ArrowKeyMovement.Direction.East:
 			{
-				StartCoroutine (AnimateSword (90f, -0.2f,original_sprite));
-				renderer.sprite = shoot_right_sprite;
+				StartCoroutine (AnimateSword (90f, -0.2f,original_sprite,shoot_right_sprite));
 				break; 
 			}
 		case ArrowKeyMovement.Direction.North:
 			{
-				StartCoroutine (AnimateSword (180f, 0f,original_sprite));
-				renderer.sprite = shoot_up_sprite;
+				StartCoroutine (AnimateSword (180f, 0f,original_sprite,shoot_up_sprite));
 				break; 
 			}
 		}
 	}
 
-	IEnumerator AnimateSword(float rotation, float verticalMove, Sprite original_sprite){
-		
+	IEnumerator AnimateSword(float rotation, float verticalMove, Sprite original_sprite, Sprite replacement_sprite){
+		renderer.sprite = replacement_sprite;
 		WeaponGO.transform.rotation = Quaternion.Euler (0, 0, rotation);
 		WeaponGO.transform.position = new Vector3 (transform.position.x,
 			transform.position.y + verticalMove, transform.position.z);
