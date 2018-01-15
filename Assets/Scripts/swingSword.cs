@@ -12,9 +12,13 @@ public class swingSword : MonoBehaviour {
 	GameObject WeaponGO;
 	GameObject SwordGO;
 
-
-	public float control_disable_time = 0.5f;
-	public float reload_time = 0.5f;
+	public Sprite shoot_up_sprite;
+	public Sprite shoot_down_sprite;
+	public Sprite shoot_left_sprite;
+	public Sprite shoot_right_sprite;
+	SpriteRenderer renderer;
+	public float control_disable_time = 0.2f;
+	public float reload_time = 0.1f;
     private float currentHealth;
     private int max_health;
     private ArrowKeyMovement.Direction swingDirection;
@@ -32,6 +36,7 @@ public class swingSword : MonoBehaviour {
 		SwordGO = GameObject.Find ("Sword");
 		SwordGO.GetComponent<Renderer> ().enabled = false;
 		SwordGO.GetComponent<BoxCollider> ().enabled = false;
+		renderer = GetComponent<SpriteRenderer> ();
     }
 	
 	// Update is called once per frame
@@ -53,31 +58,36 @@ public class swingSword : MonoBehaviour {
     }
 
 	void LinkAttack(){
+		Sprite original_sprite = renderer.sprite;
 		switch(swingDirection){
 		case ArrowKeyMovement.Direction.South:
 			{
-				StartCoroutine (AnimateSword (0f, 0f));
+				StartCoroutine (AnimateSword (0f, 0f,original_sprite));
+				renderer.sprite = shoot_down_sprite;
 				break;
 			}
 		case ArrowKeyMovement.Direction.West:
 			{
-				StartCoroutine (AnimateSword (-90f, 0f));
+				StartCoroutine (AnimateSword (-90f, 0f,original_sprite));
+				renderer.sprite = shoot_left_sprite;
 				break; 
 			}
 		case ArrowKeyMovement.Direction.East:
 			{
-				StartCoroutine (AnimateSword (90f, -0.2f));
+				StartCoroutine (AnimateSword (90f, -0.2f,original_sprite));
+				renderer.sprite = shoot_right_sprite;
 				break; 
 			}
 		case ArrowKeyMovement.Direction.North:
 			{
-				StartCoroutine (AnimateSword (180f, 0f));
+				StartCoroutine (AnimateSword (180f, 0f,original_sprite));
+				renderer.sprite = shoot_up_sprite;
 				break; 
 			}
 		}
 	}
 
-	IEnumerator AnimateSword(float rotation, float verticalMove){
+	IEnumerator AnimateSword(float rotation, float verticalMove, Sprite original_sprite){
 		
 		WeaponGO.transform.rotation = Quaternion.Euler (0, 0, rotation);
 		WeaponGO.transform.position = new Vector3 (transform.position.x,
@@ -87,6 +97,7 @@ public class swingSword : MonoBehaviour {
 		animator.enabled = false;
 		StartCoroutine(Reload ());
 		yield return new WaitForSeconds (control_disable_time);
+		renderer.sprite = original_sprite;
 		SwordGO.GetComponent<Renderer> ().enabled = false; 
 		animator.enabled = true;
 		arrowkeymovement.EnableControls ();
