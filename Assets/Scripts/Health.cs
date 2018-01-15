@@ -52,6 +52,8 @@ public class Health : MonoBehaviour {
 	public void SetHealth(float num_health)
 	{
 		health = num_health;
+		if (health > max_health)
+			health = max_health;
 	}
 
 	void Damage(float damage)

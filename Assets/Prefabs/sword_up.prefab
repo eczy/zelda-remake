@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 212609611996916436}
   - component: {fileID: 65609526253408276}
   - component: {fileID: 54855299963764104}
-  m_Layer: 9
+  - component: {fileID: 114032758493156384}
+  m_Layer: 0
   m_Name: sword_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,11 +65,22 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638247313280182}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.18644841, y: 1, z: 0.2}
   m_Center: {x: 0.000000022351742, y: 0, z: 0}
+--- !u!114 &114032758493156384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638247313280182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca21d32fe30e46678a3646ba9aca758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212609611996916436
 SpriteRenderer:
   m_ObjectHideFlags: 1

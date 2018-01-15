@@ -1,0 +1,1 @@
+Credit to https://www.spriters-resource.com/ for stalfo sprites.
