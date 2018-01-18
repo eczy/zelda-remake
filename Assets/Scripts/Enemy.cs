@@ -14,13 +14,11 @@ public class Enemy : MonoBehaviour {
 
 	FlashWhenDamaged flash;
 	Rigidbody rb;
-	enemyMovement mov;
 
 	void Start ()
 	{
 		flash = GetComponent<FlashWhenDamaged> ();
 		rb = GetComponent<Rigidbody> ();
-		mov = GetComponent<enemyMovement> ();
 	}
 
 	void Update()
@@ -69,9 +67,7 @@ public class Enemy : MonoBehaviour {
 
 	IEnumerator Knockback(Vector3 direction, float movement_delay_on_hit)
 	{
-		mov.enabled = false;
 		rb.AddForce (direction * knockback_force, ForceMode.Impulse);
 		yield return  new WaitForSeconds (movement_delay_on_hit);
-		mov.enabled = true;
 	}
 }

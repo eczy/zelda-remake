@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class enemyMovement : MonoBehaviour {
+public class StalfoMovement : MonoBehaviour {
 
     public float movement_speed = 3f;
 	public Vector3 direction = new Vector3 (1, 0, 0);

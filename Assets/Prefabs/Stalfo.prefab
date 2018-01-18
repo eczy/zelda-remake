@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550107857668924}
   - component: {fileID: 212570416965864872}
-  - component: {fileID: 114079480487105504}
+  - component: {fileID: 114392417752733236}
   - component: {fileID: 114887359228555614}
   - component: {fileID: 65591659099520104}
   - component: {fileID: 54796589108975502}
@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1647773875055372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 55, y: 5, z: 0}
+  m_LocalPosition: {x: 56.02823, y: 4.952481, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -67,7 +67,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1647773875055372}
-  m_Material: {fileID: 13400000, guid: 5e234f88065e5fe4585732dacf069f29, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -90,7 +90,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114079480487105504
+--- !u!114 &114358506177099540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1647773875055372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11bd4703ce6c41e8b1e4b74d35f9205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114392417752733236
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -104,17 +115,6 @@ MonoBehaviour:
   movement_speed: 3
   direction: {x: 1, y: 0, z: 0}
   randomize_direction_delay: 5
---- !u!114 &114358506177099540
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647773875055372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b11bd4703ce6c41e8b1e4b74d35f9205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114887359228555614
 MonoBehaviour:
   m_ObjectHideFlags: 1
