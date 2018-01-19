@@ -11,7 +11,6 @@ public class swingSword : MonoBehaviour {
 
 	GameObject WeaponGO;
 	GameObject SwordGO;
-    GameObject BoomerangGO;
 
 	public Sprite shoot_up_sprite;
 	public Sprite shoot_down_sprite;
@@ -35,13 +34,11 @@ public class swingSword : MonoBehaviour {
         max_health = playerHealth.max_health;
 		WeaponGO = GameObject.Find ("Weapon");
 		SwordGO = GameObject.Find ("Sword");
-        BoomerangGO = GameObject.Find("Boomerang");
 
         SwordGO.GetComponent<Renderer> ().enabled = false;
 		SwordGO.GetComponent<BoxCollider> ().enabled = false;
 
-        BoomerangGO.GetComponent<Renderer>().enabled = false;
-        BoomerangGO.GetComponent<PolygonCollider2D>().enabled = false;
+        
 
         renderer = GetComponent<SpriteRenderer> ();
     }
@@ -61,59 +58,11 @@ public class swingSword : MonoBehaviour {
 			LinkAttack();
 
         }
-        if (Input.GetKeyDown("c"))
-        {
-            StartCoroutine(AnimateBoomerang());
-        }
+
 
     }
 
-    IEnumerator AnimateBoomerang()
-    {
-        switch (swingDirection)
-        {
-            case ArrowKeyMovement.Direction.South:
-                {
-                    BoomerangGO.GetComponent<Renderer>().enabled = true;
-                    BoomerangGO.GetComponent<Animator>().enabled = true;
-                    BoomerangGO.GetComponent<Animator>().Play("boomerang_down");
-                    yield return new WaitForSeconds(1.2f);
-                    BoomerangGO.GetComponent<Animator>().enabled = false;
-                    BoomerangGO.GetComponent<Renderer>().enabled = false;
-                    break;
-                }
-            case ArrowKeyMovement.Direction.West:
-                {
-                    BoomerangGO.GetComponent<Renderer>().enabled = true;
-                    BoomerangGO.GetComponent<Animator>().enabled = true;
-                    BoomerangGO.GetComponent<Animator>().Play("boomerang_left");
-                    yield return new WaitForSeconds(1.2f);
-                    BoomerangGO.GetComponent<Animator>().enabled = false;
-                    BoomerangGO.GetComponent<Renderer>().enabled = false;
-                    break;
-                }
-            case ArrowKeyMovement.Direction.East:
-                {
-                    BoomerangGO.GetComponent<Renderer>().enabled = true;
-                    BoomerangGO.GetComponent<Animator>().enabled = true;
-                    BoomerangGO.GetComponent<Animator>().Play("boomerang_right");
-                    yield return new WaitForSeconds(1.2f);
-                    BoomerangGO.GetComponent<Animator>().enabled = false;
-                    BoomerangGO.GetComponent<Renderer>().enabled = false;
-                    break;
-                }
-            case ArrowKeyMovement.Direction.North:
-                {
-                    BoomerangGO.GetComponent<Renderer>().enabled = true;
-                    BoomerangGO.GetComponent<Animator>().enabled = true;
-                    BoomerangGO.GetComponent<Animator>().Play("boomerang_up");
-                    yield return new WaitForSeconds(1.2f);
-                    BoomerangGO.GetComponent<Animator>().enabled = false;
-                    BoomerangGO.GetComponent<Renderer>().enabled = false;
-                    break;
-                }
-        }
-    }
+    
 
 	void LinkAttack(){
 		Sprite original_sprite = renderer.sprite;
