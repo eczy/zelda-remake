@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour {
 	public float bomb_damage = 1.0f;
 	public float knockback_force;
 	public float movement_delay_on_hit = 0.5f;
+   // public bool stunned = false;
 
 	FlashWhenDamaged flash;
 	Rigidbody rb;
@@ -41,7 +42,8 @@ public class Enemy : MonoBehaviour {
 			Debug.Log ("Enemy hit by arrow");
 			Damage (arrow_damage);
 			Destroy (other);
-		} else if (other.GetComponent<Sword> () != null) {
+		}
+        else if (other.GetComponent<Sword> () != null) {
 			Debug.Log ("Enemy hit by sword");
 			Damage (sword_damage);
 
@@ -49,6 +51,12 @@ public class Enemy : MonoBehaviour {
 			if (other.GetComponent<Rigidbody> () != null)
 				Destroy (other);
 		}
+        else if (other.GetComponent<Boomerang>() != null)
+        {
+            Debug.Log("Enemy hit by boomerang");
+            
+            
+        }
 
 		Vector3 dir = transform.position - other.transform.position;
 		if (Mathf.Abs (dir.x) > Mathf.Abs (dir.y)) {

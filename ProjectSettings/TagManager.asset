@@ -8,6 +8,7 @@ TagManager:
   - heart
   - key
   - arrow
+  - stalfo
   layers:
   - Default
   - TransparentFX
