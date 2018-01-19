@@ -50,6 +50,9 @@ public class Enemy : MonoBehaviour {
 			// Destroy if it is a magic sword beam
 			if (other.GetComponent<Rigidbody> () != null)
 				Destroy (other);
+		} else if (other.GetComponent<Bomb> () != null) {
+			Debug.Log ("Enemy hit by bomb");
+			Damage (bomb_damage);
 		}
         else if (other.GetComponent<Boomerang>() != null)
         {

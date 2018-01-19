@@ -8,7 +8,11 @@ TagManager:
   - heart
   - key
   - arrow
+<<<<<<< Updated upstream
   - stalfo
+=======
+  - bomb
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

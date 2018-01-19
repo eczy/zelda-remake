@@ -42,6 +42,10 @@ public class Collector : MonoBehaviour {
 			if (inventory != null)
 				inventory.AddKeys (1);
 			Destroy (object_collided_with);
+		} else if (object_collided_with.tag == "bomb") {
+			if (inventory != null)
+				inventory.AddBombs (1);
+			Destroy (object_collided_with);
 		}
 	}
 }

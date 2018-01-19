@@ -41,7 +41,6 @@ public class KeeseMovement : MonoBehaviour {
 		can_fly = false;
 		rb.velocity = new Vector3 (0, 1, 0) * peak_speed;
 		float t = 0f;
-		Debug.Log ("Accelerating");
 		while (t < accel_time)
 		{
 			float frac_accel = t/accel_time;
@@ -62,7 +61,6 @@ public class KeeseMovement : MonoBehaviour {
 		}
 
 		t = 0f;
-		Debug.Log ("Full speed");
 		while (t < fly_time)
 		{
 			vel = new Vector3 (Random.Range (-1, 2), Random.Range (-1, 2), 0) * peak_speed;
@@ -79,7 +77,6 @@ public class KeeseMovement : MonoBehaviour {
 		}
 
 		t = 0f;
-		Debug.Log ("Decelerating");
 		while (t < accel_time)
 		{
 			float frac_accel = t/accel_time;
