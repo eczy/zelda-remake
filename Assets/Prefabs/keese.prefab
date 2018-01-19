@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114217521216614694}
   - component: {fileID: 65037865990336704}
   - component: {fileID: 54564691126606872}
+  - component: {fileID: 95414024537889480}
   m_Layer: 0
   m_Name: keese
   m_TagString: Untagged
@@ -57,7 +58,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &65037865990336704
 BoxCollider:
@@ -71,6 +72,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95414024537889480
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988557142356864}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 646f017feb8d9c943a7519b7650ef6c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114217521216614694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,6 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc141eb8100f34447a41e93908c2e36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rest_time: 2
+  fly_time: 10
+  peak_speed: 3
+  accel_time: 0
+  randomize_direction_time: 1
 --- !u!114 &114634319403456040
 MonoBehaviour:
   m_ObjectHideFlags: 1
