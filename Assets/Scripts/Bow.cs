@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bow : MonoBehaviour {
+public class Bow : Weapon {
 
 	public float arrow_speed=10f;
 	public float spawn_distance;
@@ -33,7 +33,7 @@ public class Bow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Z) && !reloading) {
+		if (Input.GetKeyDown (usage_key) && !reloading) {
 			StartCoroutine(Shoot ());
 		}
 	}

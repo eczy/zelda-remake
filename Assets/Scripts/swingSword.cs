@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class swingSword : MonoBehaviour {
-
+public class swingSword : Weapon {
     Animator animator;
 	Rigidbody rb;
     Health playerHealth;
@@ -50,7 +49,7 @@ public class swingSword : MonoBehaviour {
 		changeFaceDirectionBool();
 		//SwordGO.GetComponent<Renderer> ().enabled = false;
 		//SwordGO.GetComponent<BoxCollider> ().enabled = false;
-		if (Input.GetKeyDown("x") && !reloading && (playerHealth.GetHealth()<playerHealth.max_health))
+		if (Input.GetKeyDown(usage_key) && !reloading && (playerHealth.GetHealth()<playerHealth.max_health))
         { 
             animator.SetBool("pressedX", true);
 			//Debug.Log ("current health is" + currentHealth);

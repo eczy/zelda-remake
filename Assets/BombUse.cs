@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombUse : MonoBehaviour {
+public class BombUse : Weapon {
 
 	public Bomb bomb;
 	public float spawn_distance = 1f;
@@ -21,7 +21,7 @@ public class BombUse : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// TODO: implement weapon switcher
-		if (Input.GetKeyDown(KeyCode.B) && can_set_bomb){
+		if (Input.GetKeyDown(usage_key) && can_set_bomb){
 			int num_bombs = inventory.GetBombs ();
 			if (num_bombs <= 0)
 				return;

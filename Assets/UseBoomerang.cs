@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UseBoomerang : MonoBehaviour {
+public class UseBoomerang : Weapon {
 
     Animator animator;
     Rigidbody rb;
@@ -16,6 +16,7 @@ public class UseBoomerang : MonoBehaviour {
     public Sprite shoot_down_sprite;
     public Sprite shoot_left_sprite;
     public Sprite shoot_right_sprite;
+
 
     private ArrowKeyMovement.Direction swingDirection;
 
@@ -37,7 +38,7 @@ public class UseBoomerang : MonoBehaviour {
     void Update()
     {
         swingDirection = arrowkeymovement.linkDirection;
-        if (Input.GetKeyDown("c"))
+        if (Input.GetKeyDown(usage_key))
         {
             BoomerangAttack();
         }

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4779272556971052}
   - component: {fileID: 212399921011013906}
   - component: {fileID: 114770317386229808}
+  - component: {fileID: 135681726381149886}
   m_Layer: 0
   m_Name: bomb_set
   m_TagString: Untagged
@@ -59,6 +60,18 @@ MonoBehaviour:
   cloud_quarter: {fileID: 21300004, guid: 280ae64a075861147b2b19cf25f91bdc, type: 3}
   fuse_time: 1
   cloud_disperse_time: 1
+--- !u!135 &135681726381149886
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429062535793486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212399921011013906
 SpriteRenderer:
   m_ObjectHideFlags: 1

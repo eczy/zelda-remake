@@ -22,6 +22,7 @@ public class flyingSword : MonoBehaviour {
 	SpriteRenderer renderer;
 	Health playerHealth;
 	Animator animator;
+	swingSword sword;
 	bool reloading = false;
 
 	// Use this for initialization
@@ -31,11 +32,12 @@ public class flyingSword : MonoBehaviour {
 		renderer = GetComponent<SpriteRenderer> ();
 		animator = GetComponent<Animator> ();
 		playerHealth = GetComponent<Health> ();
+		sword = GetComponent<swingSword> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.X) && !reloading && (playerHealth.GetHealth()==playerHealth.max_health)) {
+		if (Input.GetKeyDown (sword.usage_key) && !reloading && (playerHealth.GetHealth()==playerHealth.max_health)) {
 			StartCoroutine(Shoot ());
 		}
 	}
