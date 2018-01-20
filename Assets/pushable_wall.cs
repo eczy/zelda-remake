@@ -31,16 +31,12 @@ public class pushable_wall : MonoBehaviour {
         checkVec = originalPos - transform.position;
         if (Mathf.Abs(checkVec.x) >= 1)
         {
-            rb.velocity = new Vector3(0, 0, 0);
-            rb.position = new Vector3(originalPos.x - checkVec.x, originalPos.y, originalPos.z);
-            originalPos = rb.position;
+            rb.isKinematic = true;
             return;
         }
         if (Mathf.Abs(checkVec.y) >= 1)
         {
-            rb.velocity = new Vector3(0, 0, 0);
-            rb.position = new Vector3(originalPos.x, originalPos.y - checkVec.y, originalPos.z);
-            originalPos = rb.position;
+            rb.isKinematic = true;
             return;
         }
 
