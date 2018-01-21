@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212617463855354472}
   - component: {fileID: 65284603274554926}
   - component: {fileID: 54608731570164382}
+  - component: {fileID: 114937769327189584}
   m_Layer: 8
   m_Name: Pushable_Wall
   m_TagString: Untagged
@@ -69,6 +70,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114937769327189584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1989241099964512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5782e311304c9341810f3b086c85ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212617463855354472
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,8 +112,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1551323361
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300088, guid: 3f029c1546d6f422791e287e607bbe5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
