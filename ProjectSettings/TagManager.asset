@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - bomb
   - stalfo
-  - rupee
-  - key
-  - heart
+  - bomb
   layers:
   - Default
   - TransparentFX
@@ -18,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - pushable_wall
-  - wall
+  - 
+  - 
   - 
   - 
   - 
@@ -45,7 +42,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: pushable_wall
-    uniqueID: 2743643935
     locked: 0
