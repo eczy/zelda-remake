@@ -32,7 +32,10 @@ public class StalfoMovement : MonoBehaviour {
 		while (true) {
 			int i = Random.Range (0, 4);
 			direction = directions [i];
-			if (!Physics.Raycast (transform.position, direction, 1f) && direction != -current_dir) {
+			if (direction == -current_dir)
+				continue;
+			
+			if (Physics.Raycast (transform.position, direction, 1f, 1 << 9) == false) {
 				current_dir = direction;
 				break;
 			}

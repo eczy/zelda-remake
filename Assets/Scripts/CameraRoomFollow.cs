@@ -49,6 +49,7 @@ public class CameraRoomFollow : MonoBehaviour {
 			player_transform.position = Vector3.Lerp (player_start_position, player_end_position, t);
 			yield return null;
 		}
+		transform.position = player_end_position;
 		player_bc.enabled = true;
 		controller.EnableControls ();
 	}
