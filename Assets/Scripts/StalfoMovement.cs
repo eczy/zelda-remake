@@ -29,16 +29,22 @@ public class StalfoMovement : MonoBehaviour {
 	IEnumerator Move()
 	{
 		Vector3 direction;
+		int iter = 0;
 		while (true) {
 			int i = Random.Range (0, 4);
 			direction = directions [i];
 			if (direction == -current_dir)
 				continue;
 			
-			if (Physics.Raycast (transform.position, direction, 1f, 1 << 9) == false) {
+			if (Physics.Raycast (transform.position, direction, 1f, ~(1<<8)) == false) {
 				current_dir = direction;
 				break;
 			}
+
+			// Prevent infinite looping
+			iter++;
+			if (iter > 100)
+				break;
 		}
 
 		float t = 0f;
