@@ -69,7 +69,10 @@ GameObject:
   - component: {fileID: 114733307616674096}
   - component: {fileID: 114601779399546180}
   - component: {fileID: 114710550537465828}
-  m_Layer: 11
+  - component: {fileID: 114911488239296386}
+  - component: {fileID: 114245859539037316}
+  - component: {fileID: 114145358240131262}
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -86,8 +89,8 @@ GameObject:
   - component: {fileID: 4268952032299946}
   - component: {fileID: 212986036950630452}
   - component: {fileID: 95707336709678698}
-  - component: {fileID: 60331995565949466}
   - component: {fileID: 114585679908528190}
+  - component: {fileID: 135597409798905930}
   m_Layer: 0
   m_Name: Boomerang
   m_TagString: Untagged
@@ -143,7 +146,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849430212392308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22, y: 59, z: 0}
+  m_LocalPosition: {x: 39.5, y: 4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4863513582531752}
@@ -165,56 +168,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!60 &60331995565949466
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1863923150397430}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.2689948, y: 0.48176265}
-    oldSize: {x: 0.08, y: 0.16}
-    newSize: {x: 0.08, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.021335602, y: -0.016840696}
-      - {x: -0.008113861, y: -0.024793228}
-      - {x: 0.0034694672, y: -0.04113984}
-      - {x: 0.013342857, y: -0.06064439}
-      - {x: 0.016745567, y: -0.068965435}
-      - {x: 0.02457428, y: -0.075755596}
-      - {x: 0.04720497, y: -0.075755596}
-      - {x: 0.052965164, y: -0.065467045}
-      - {x: 0.05541134, y: -0.05651776}
-      - {x: 0.045265198, y: -0.045665663}
-      - {x: 0.032969475, y: -0.0354383}
-      - {x: 0.015129089, y: -0.010151228}
-      - {x: 0.015371323, y: 0.0030539832}
-      - {x: 0.014494896, y: 0.017748198}
-      - {x: 0.03255272, y: 0.036937237}
-      - {x: 0.046878815, y: 0.05012862}
-      - {x: 0.054211617, y: 0.05854162}
-      - {x: 0.055797577, y: 0.06451925}
-      - {x: 0.055677414, y: 0.07252073}
-      - {x: 0.045547485, y: 0.07672771}
-      - {x: 0.034415245, y: 0.0793473}
-      - {x: 0.022720337, y: 0.07681768}
-      - {x: 0.01360321, y: 0.07266315}
-      - {x: 0.0056037903, y: 0.05731281}
-      - {x: -0.0063934326, y: 0.04513073}
-      - {x: -0.021187782, y: 0.027207216}
 --- !u!65 &65018106217100514
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -317,6 +270,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11bd4703ce6c41e8b1e4b74d35f9205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114145358240131262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849430212392308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51dd82b54bec337408fda95433067c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 114280777443142842}
+  - {fileID: 114601779399546180}
+  - {fileID: 114245859539037316}
+  - {fileID: 114710550537465828}
+  weapon_A: {fileID: 0}
+  weapon_B: {fileID: 0}
+--- !u!114 &114245859539037316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849430212392308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f288a8d2ab182f49850824f4f1a8b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usage_key: 0
+  bomb: {fileID: 114770317386229808, guid: 496532e94252f8b4db98746176177ae8, type: 2}
+  spawn_distance: 1
+  reload_time: 2
 --- !u!114 &114280777443142842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04c883d97d18784ebfeb6f850b8c2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usage_key: 0
   shoot_up_sprite: {fileID: 21300052, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   shoot_down_sprite: {fileID: 21300048, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   shoot_left_sprite: {fileID: 21300050, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
@@ -371,7 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed5850e23b630d4e94a8f6e48a563ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunned: 0
 --- !u!114 &114601779399546180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570d0dc9051a24783be0dfd3cecb0173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usage_key: 0
   arrow_speed: 10
   spawn_distance: 1.2
   arrow_up: {fileID: 54426641802130602, guid: 0e4b02a38e71442388e94a6e695acf56, type: 2}
@@ -409,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd2eff55f7ad6547b326aac21ff5217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usage_key: 0
   shoot_up_sprite: {fileID: 21300052, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   shoot_down_sprite: {fileID: 21300048, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   shoot_left_sprite: {fileID: 21300050, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
@@ -483,6 +471,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rupee_collection_sound_clip: {fileID: 8300000, guid: 86d45409ecaf74b8f8cfce1f5e950f20,
     type: 3}
+--- !u!114 &114911488239296386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849430212392308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51dd82b54bec337408fda95433067c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
+  weapon_A: {fileID: 0}
+  weapon_B: {fileID: 0}
 --- !u!114 &114965682495249688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -494,6 +496,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd24fb20c86e74169b3a638a94c7a280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &135597409798905930
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1863923150397430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0.018480413, y: 0.0029179752, z: 0}
 --- !u!212 &212036144653338742
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -569,8 +583,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1551323361
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -1,96 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class StalfoMovement : MonoBehaviour {
 
-    public float movement_speed = 3f;
-	public Vector3 direction = new Vector3 (1, 0, 0);
-	public float randomize_direction_delay = 5.0f;
+	Rigidbody rb;
+	public float move_time = 0.5f;
 
-    Rigidbody rb;
+	Vector3 current_dir;
 
+	Vector3[] directions = {
+		new Vector3 (1, 0, 0),
+		new Vector3 (0, 1, 0),
+		new Vector3 (-1, 0, 0),
+		new Vector3 (0, -1, 0)
+	};
+
+	// Use this for initialization
 	void Start () {
-        rb = GetComponent<Rigidbody>();
-		StartCoroutine (RandomizeDirection ());
-    }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-        rb.velocity = direction * movement_speed;
-		Debug.Log (rb.velocity.ToString ());
-		Vector3 current_pos = transform.position;
-		Debug.Log (direction.ToString ());
-		if (Mathf.Abs (direction.y) < 0.1) {
-			transform.position = new Vector3 (current_pos.x, Mathf.RoundToInt (current_pos.y), current_pos.z);
-		} else {
-			transform.position = new Vector3 (Mathf.RoundToInt (current_pos.x), current_pos.y, current_pos.z);
-		}
+		rb = GetComponent<Rigidbody> ();
+		StartCoroutine (Move ());
 	}
 
-	void OnCollisionEnter(Collision coll)
+	void Update (){
+		Debug.DrawLine (transform.position, transform.position + current_dir * 1f);
+	}
+
+	IEnumerator Move()
 	{
-		GameObject other = coll.collider.gameObject;
-
-		Vector3 dir = transform.position - other.transform.position;
-		if (Mathf.Abs (dir.x) > Mathf.Abs (dir.y)) {
-			if (dir.x >= 0)
-				dir = new Vector3 (1, 0, 0);
-			else
-				dir = new Vector3 (-1, 0, 0);
-		} else {
-			if (dir.y >= 0)
-				dir = new Vector3 (0, 1, 0);
-			else
-				dir = new Vector3 (0, -1, 0);
+		Vector3 direction;
+		while (true) {
+			int i = Random.Range (0, 4);
+			direction = directions [i];
+			if (!Physics.Raycast (transform.position, direction, 1f) && direction != -current_dir) {
+				current_dir = direction;
+				break;
+			}
 		}
 
-		Vector3 current_pos = transform.position;
-		transform.position = new Vector3 (Mathf.RoundToInt(current_pos.x), Mathf.RoundToInt (current_pos.y), current_pos.z);
-
-		int r = UnityEngine.Random.Range (0, 3);
-
-		switch (r) {
-		case (0):
-			direction = Quaternion.Euler (0, 0, 90) * dir;
-			break;
-		case (1):
-			direction = Quaternion.Euler (0, 0, 180) * dir;
-			break;
-		case (2):
-			direction = Quaternion.Euler (0, 0, 270) * dir;
-			break;
-		default:
-			direction = Quaternion.Euler (0, 0, 180) * dir;
-			break;
+		float t = 0f;
+		Vector3 start = rb.position;
+		Vector3 end = rb.position + current_dir;
+		while (t < move_time) {
+			t += Time.deltaTime;
+			float progress = t / move_time;
+			rb.position = Vector3.Lerp (start, end, progress);
+			yield return null;
 		}
-
-		//rb.AddForce (direction * movement_speed, ForceMode.Impulse);
-	}
-
-	IEnumerator RandomizeDirection () {
-		yield return new WaitForSeconds (randomize_direction_delay);
-		Debug.Log ("Randomizing direction!");
-
-		int r = UnityEngine.Random.Range (0, 3);
-
-		switch (r) {
-		case (0):
-			direction = Quaternion.Euler (0, 0, 90) * direction;
-			break;
-		case (1):
-			direction = Quaternion.Euler (0, 0, 180) * direction;
-			break;
-		case (2):
-			direction = Quaternion.Euler (0, 0, 270) * direction;
-			break;
-		default:
-			direction = Quaternion.Euler (0, 0, 180) * direction;
-			break;
-		}
-
-		StartCoroutine (RandomizeDirection ());
-		yield return null;
+		StartCoroutine (Move ());
 	}
 }

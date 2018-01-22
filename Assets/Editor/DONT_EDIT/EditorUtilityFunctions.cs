@@ -20,6 +20,7 @@ public class EditorUtilityFunctions {
     }
 
     public static GameObject GetRoomPrefab() {
+		return null;
         string[] possiblePrefabs = AssetDatabase.FindAssets("Room t:prefab");
         if (possiblePrefabs.Length == 0) {
             return null;
@@ -41,7 +42,7 @@ public class EditorUtilityFunctions {
 
     public static GameObject GenerateNewTilePrefab(string type, Sprite prefabSprite = null) {
         string prefabName = EditorUtilityFunctions.tilePrefix + type;
-		//prefabName = prefabName.TrimEnd ('\r', '\n');
+        prefabName = prefabName.TrimEnd('\r', '\n');
         string prefabPath = EditorUtilityFunctions.GetGeneratedAssetsFolder() + prefabName + ".prefab";
         GameObject tile = new GameObject();
         SpriteRenderer tileSR = tile.AddComponent<SpriteRenderer>();

@@ -112,9 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3741235de5350b04b8c5299737ab3cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement_speed: 3
-  direction: {x: 1, y: 0, z: 0}
-  randomize_direction_delay: 5
+  move_time: 0.5
 --- !u!114 &114887359228555614
 MonoBehaviour:
   m_ObjectHideFlags: 1
