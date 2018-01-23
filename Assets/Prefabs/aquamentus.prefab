@@ -40,6 +40,8 @@ GameObject:
   - component: {fileID: 114150605786232480}
   - component: {fileID: 114958393766145688}
   - component: {fileID: 54195778744175128}
+  - component: {fileID: 135853568440937072}
+  - component: {fileID: 114907566717737452}
   m_Layer: 0
   m_Name: aquamentus
   m_TagString: Untagged
@@ -127,6 +129,19 @@ MonoBehaviour:
   rightlim: 1
   fireball: {fileID: 54961139893236778, guid: c17211de80d6aa34c931fd275f107aba, type: 2}
   fireball_speed: 4
+  shot_spread: 0.25
+  player: {fileID: 0}
+--- !u!114 &114907566717737452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955325984195268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11bd4703ce6c41e8b1e4b74d35f9205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114958393766145688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,13 +154,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  health: 3
+  health: 10
   flash_duration: 0.5
   sword_damage: 1
   arrow_damage: 1
   bomb_damage: 1
   knockback_force: 0
-  movement_delay_on_hit: 0.5
+  movement_delay_on_hit: 0
+--- !u!135 &135853568440937072
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955325984195268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: -0.25, y: 0.5, z: 0}
 --- !u!212 &212024868657128260
 SpriteRenderer:
   m_ObjectHideFlags: 1

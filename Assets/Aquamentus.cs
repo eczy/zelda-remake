@@ -14,6 +14,7 @@ public class Aquamentus : MonoBehaviour {
 	public float rightlim = 2;
 	public Rigidbody fireball;
 	public float fireball_speed = 2f;
+	public float shot_spread = 0.25f;
 	public Transform player;
 
 	bool canshoot = true;
@@ -35,6 +36,7 @@ public class Aquamentus : MonoBehaviour {
 		startposx = transform.position.x;
 		leftlim = startposx + leftlim;
 		rightlim = startposx + rightlim;
+
 		StartCoroutine (Move ());
 	}
 	
@@ -59,23 +61,31 @@ public class Aquamentus : MonoBehaviour {
 		}
 		rb.position = new Vector3 (new_x, rb.position.y, 0);
 		Debug.DrawLine (new Vector3 (leftlim, transform.position.y, 0), new Vector3 (rightlim, transform.position.y, 0), Color.red);
-		Debug.DrawRay (fireball_spawnpoint.position, shootdirs [2]);
+		Debug.DrawRay (fireball_spawnpoint.position, fireball_spawnpoint.forward);
+	
+		fireball_spawnpoint.forward = player.transform.position - fireball_spawnpoint.transform.position;
 
-		for (int i = 0; i < shootdirs.Length; i++) {
-			shootdirs[i] = Vector3.RotateTowards (shootdirs[i], player.position - fireball_spawnpoint.position, 100, 0);
-		}
+		shootdirs [0] = Vector3.RotateTowards(fireball_spawnpoint.forward, fireball_spawnpoint.up, shot_spread, 0f);
+		shootdirs [1] = Vector3.RotateTowards(fireball_spawnpoint.forward, -fireball_spawnpoint.up, shot_spread, 0f);
+		shootdirs [2] = fireball_spawnpoint.forward;
 	}
 
 	IEnumerator Shoot (){
 		canshoot = false;
 		anim.SetBool ("firing", true);
-		Rigidbody fb0 = Instantiate (fireball, fireball_spawnpoint.position, fireball_spawnpoint.rotation);
-		Rigidbody fb1 = Instantiate (fireball, fireball_spawnpoint.position, fireball_spawnpoint.rotation);
-		Rigidbody fb2 = Instantiate (fireball, fireball_spawnpoint.position, fireball_spawnpoint.rotation);
+
+		Rigidbody[] fireballs = {
+			Instantiate (fireball, fireball_spawnpoint.position, transform.rotation),
+			Instantiate (fireball, fireball_spawnpoint.position, transform.rotation),
+			Instantiate (fireball, fireball_spawnpoint.position, transform.rotation)
+		};
+
 		yield return new WaitForSeconds (power_up_time);
-		fb0.velocity = shootdirs [0] * fireball_speed;
-		fb1.velocity = shootdirs [1] * fireball_speed;
-		fb2.velocity = shootdirs [2] * fireball_speed;
+
+		for (int i = 0; i < fireballs.Length; ++i){
+			if (fireballs [i] != null)
+				fireballs [i].velocity = shootdirs [i] * fireball_speed;
+		}
 		Debug.Log ("Aquamentus: pew");
 		anim.SetBool ("firing", false);
 		yield return new WaitForSeconds (Random.Range (min_reload_time, max_reload_time));
