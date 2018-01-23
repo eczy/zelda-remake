@@ -7,13 +7,17 @@ public class Aquamentus : MonoBehaviour {
 	public float max_reload_time = 3f;
 	public float min_reload_time = 0.5f;
 	public float power_up_time = 0.5f;
+	public float delta_x = 0.1f;
+	public float change_dir_delay = 0.5f;
 	public Transform fireball_spawnpoint;
 	public float leftlim = -2;
 	public float rightlim = 2;
 	public Rigidbody fireball;
 	public float fireball_speed = 2f;
+	public Transform player;
 
 	bool canshoot = true;
+	bool forward = true;
 	Animator anim;
 	Rigidbody rb;
 	float startposx;
@@ -29,6 +33,8 @@ public class Aquamentus : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody> ();
 		startposx = transform.position.x;
+		leftlim = startposx + leftlim;
+		rightlim = startposx + rightlim;
 		StartCoroutine (Move ());
 	}
 	
@@ -36,6 +42,28 @@ public class Aquamentus : MonoBehaviour {
 	void Update () {
 		if (canshoot)
 			StartCoroutine (Shoot ());
+
+		float new_x;
+		if (forward) {
+			new_x = rb.position.x - delta_x;
+			if (new_x < leftlim) {
+				new_x = leftlim;
+				forward = false;
+			}
+		} else {
+			new_x = rb.position.x + delta_x;
+			if (new_x > rightlim) {
+				new_x = rightlim;
+				forward = true;
+			}
+		}
+		rb.position = new Vector3 (new_x, rb.position.y, 0);
+		Debug.DrawLine (new Vector3 (leftlim, transform.position.y, 0), new Vector3 (rightlim, transform.position.y, 0), Color.red);
+		Debug.DrawRay (fireball_spawnpoint.position, shootdirs [2]);
+
+		for (int i = 0; i < shootdirs.Length; i++) {
+			shootdirs[i] = Vector3.RotateTowards (shootdirs[i], player.position - fireball_spawnpoint.position, 100, 0);
+		}
 	}
 
 	IEnumerator Shoot (){
@@ -55,6 +83,13 @@ public class Aquamentus : MonoBehaviour {
 	}
 
 	IEnumerator Move(){
-		yield return null;
+		yield return new WaitForSeconds (change_dir_delay);
+		int r = Random.Range (0, 2);
+		if (r == 0)
+			forward = true;
+		else
+			forward = false;
+
+		StartCoroutine (Move ());
 	}
 }
