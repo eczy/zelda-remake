@@ -9,6 +9,8 @@ public class GelMovement : MonoBehaviour {
 	public float min_move_delay = 0.1f;
 	public float move_time = 0.5f;
 
+	int layer_mask = (1 << 8) | (1 << 9);
+
 	Vector3[] directions = {
 		new Vector3 (1, 0, 0),
 		new Vector3 (0, 1, 0),
@@ -25,10 +27,14 @@ public class GelMovement : MonoBehaviour {
 	IEnumerator Move()
 	{
 		Vector3 direction;
+		int iter = 0;
 		while (true) {
 			int i = Random.Range (0, 4);
 			direction = directions [i];
-			if (!Physics.Raycast (transform.position, direction, 1f))
+			if (!Physics.Raycast (transform.position, direction, layer_mask))
+				break;
+
+			if (iter > 100)
 				break;
 		}
 			

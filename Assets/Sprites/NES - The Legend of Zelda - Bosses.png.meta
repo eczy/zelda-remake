@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 9444f89b769a2ef4297353839fd789ec
-timeCreated: 1516697955
+guid: 549314f34eede0a4e99129738ea22fcd
+timeCreated: 1516697435
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: stalfo_0
-    21300002: stalfo_1
-    21300004: keese_0
-    21300006: keese_1
-    21300008: gel_0
-    21300010: gel_1
-    21300012: fireball_0
+    21300000: aquamentus_0
+    21300002: aquamentus_1
+    21300004: aquamentus_2
+    21300006: aquamentus_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -97,97 +94,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stalfo_0
+      name: aquamentus_0
       rect:
         serializedVersion: 2
-        x: 496
-        y: 144
-        width: 16
-        height: 16
+        x: 0
+        y: 311
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: stalfo_1
+      name: aquamentus_1
       rect:
         serializedVersion: 2
-        x: 520
-        y: 144
-        width: 16
-        height: 16
+        x: 45
+        y: 311
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: keese_0
+      name: aquamentus_2
       rect:
         serializedVersion: 2
-        x: 184
-        y: 144
-        width: 16
-        height: 16
+        x: 90
+        y: 311
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: keese_1
+      name: aquamentus_3
       rect:
         serializedVersion: 2
-        x: 208
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: gel_0
-      rect:
-        serializedVersion: 2
-        x: 1316
-        y: 143
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: gel_1
-      rect:
-        serializedVersion: 2
-        x: 1332
-        y: 143
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: fireball_0
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 96
-        width: 16
-        height: 16
+        x: 135
+        y: 311
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

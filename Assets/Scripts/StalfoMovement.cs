@@ -8,6 +8,7 @@ public class StalfoMovement : MonoBehaviour {
 	public float move_time = 0.5f;
 
 	Vector3 current_dir;
+	int layer_mask = (1 << 8) | (1 << 9);
 
 	Vector3[] directions = {
 		new Vector3 (1, 0, 0),
@@ -36,7 +37,7 @@ public class StalfoMovement : MonoBehaviour {
 			if (direction == -current_dir)
 				continue;
 			
-			if (Physics.Raycast (transform.position, direction, 1f, ~(1<<8)) == false) {
+			if (Physics.Raycast (transform.position, direction, 1f, layer_mask) == false) {
 				current_dir = direction;
 				break;
 			}
