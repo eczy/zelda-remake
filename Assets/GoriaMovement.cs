@@ -33,7 +33,7 @@ public class GoriaMovement : EnemyController {
 		Debug.DrawLine (transform.position, transform.position + current_dir * 1f);
 
 		if (can_throw)
-			StartCoroutine (ThrowBoomerang);
+			StartCoroutine (ThrowBoomerang());
 	}
 
 	void FixedUpdate(){
