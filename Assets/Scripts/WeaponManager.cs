@@ -24,6 +24,9 @@ public class WeaponManager : MonoBehaviour {
 			KeyCode.Alpha5
 		};
 
+		// Default equip sword
+		weapons [0].usage_key = weapon_keys [0];
+		weapon_A = weapons [0];
 	}
 	
 	// Update is called once per frame

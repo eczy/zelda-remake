@@ -56,6 +56,7 @@ public class UseBoomerang : Weapon {
 
     void BoomerangAttack()
     {
+		AudioSource.PlayClipAtPoint (use_sound, Camera.main.transform.position);
         Sprite original_sprite = renderer.sprite;
         switch (swingDirection)
         {

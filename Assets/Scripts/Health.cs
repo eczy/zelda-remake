@@ -18,6 +18,7 @@ public class Health : MonoBehaviour {
 	ArrowKeyMovement controller;
 	Rigidbody rb;
 	FlashWhenDamaged flash;
+	AudioSource audio;
 	Coroutine co_recover;
 	Coroutine co_pause_controls;
 	bool recovering = false;
@@ -27,13 +28,16 @@ public class Health : MonoBehaviour {
 		controller = GetComponent<ArrowKeyMovement> ();
 		rb = GetComponent<Rigidbody> ();
 		flash = GetComponent<FlashWhenDamaged> ();
+		audio = GetComponent<AudioSource> ();
+		audio.enabled = false;
 	}
 
 	void Update()
 	{
-		if (health < 1) {
-			AudioSource.PlayClipAtPoint (low_health_sound, Camera.main.transform.position);
-		}
+		if (health <= 1)
+			audio.enabled = true;
+		else
+			audio.enabled = false;
 	}
 
 	public bool FullHealthFlag(){
