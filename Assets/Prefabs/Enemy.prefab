@@ -83,6 +83,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  health: 3
+  flash_duration: 0.5
+  sword_damage: 1
+  arrow_damage: 1
+  bomb_damage: 1
+  boom_damage: 1
+  knockback_force: 0
+  movement_delay_on_hit: 0.5
+  hurt_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}
+  die_sound: {fileID: 8300000, guid: 18aa5d8d6d1af304d82ca34af9a9b880, type: 3}
+  controller: {fileID: 0}
+  carried_object: {fileID: 0}
 --- !u!114 &114806199429188092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,9 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3741235de5350b04b8c5299737ab3cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement_speed: 3
-  adjustPosition_force: 0.1
-  direction: {x: -1, y: 0}
+  move_speed: 0.5
+  change_dir_time: 1
 --- !u!212 &212988836097733390
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -139,5 +150,5 @@ SpriteRenderer:
   m_Size: {x: 0.37, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
