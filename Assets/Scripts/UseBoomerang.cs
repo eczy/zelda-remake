@@ -20,6 +20,8 @@ public class UseBoomerang : Weapon {
 
 
     private ArrowKeyMovement.Direction swingDirection;
+    private float animationTime = 1.4f;
+    private float lastTime;
 
     void Awake()
     {
@@ -32,17 +34,23 @@ public class UseBoomerang : Weapon {
         PlayerGO = GameObject.Find("Player");
 
         BoomerangGO.GetComponent<Renderer>().enabled = false;
-        BoomerangGO.GetComponent<PolygonCollider2D>().enabled = false;
+        BoomerangGO.GetComponent<SphereCollider>().enabled = false;
         renderer = GetComponent<SpriteRenderer>();
+
+        lastTime = Time.time;
     }
 
     void Update()
     {
         swingDirection = arrowkeymovement.linkDirection;
-        if (Input.GetKeyDown(usage_key))
+        
+        if (Input.GetKeyDown(usage_key) && (Time.time - lastTime)>animationTime)
         {
-			AudioSource.PlayClipAtPoint (use_sound, Camera.main.transform.position);
+            //AudioSource.PlayClipAtPoint (use_sound, Camera.main.transform.position);
+            BoomerangGO.GetComponent<SphereCollider>().enabled = true;
             BoomerangAttack();
+            
+            lastTime = Time.time;
         }
     }
 
@@ -95,6 +103,7 @@ public class UseBoomerang : Weapon {
         animator.enabled = true;
         yield return new WaitForSeconds(1.2f);
         BoomerangGO.GetComponent<Animator>().enabled = false;
+        BoomerangGO.GetComponent<SphereCollider>().enabled = false;
         BoomerangGO.GetComponent<Renderer>().enabled = false;
     }
 }
