@@ -13,6 +13,7 @@ public class Health : MonoBehaviour {
 	public GameObject death_panel;
 	public AudioClip hurt_sound;
 	public AudioClip die_sound;
+	public AudioClip low_health_sound;
 
 	ArrowKeyMovement controller;
 	Rigidbody rb;
@@ -26,6 +27,13 @@ public class Health : MonoBehaviour {
 		controller = GetComponent<ArrowKeyMovement> ();
 		rb = GetComponent<Rigidbody> ();
 		flash = GetComponent<FlashWhenDamaged> ();
+	}
+
+	void Update()
+	{
+		if (health < 1) {
+			AudioSource.PlayClipAtPoint (low_health_sound, Camera.main.transform.position);
+		}
 	}
 
 	public bool FullHealthFlag(){
