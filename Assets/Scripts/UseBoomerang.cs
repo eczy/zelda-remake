@@ -47,7 +47,9 @@ public class UseBoomerang : Weapon {
         if (Input.GetKeyDown(usage_key) && (Time.time - lastTime)>animationTime)
         {
             //AudioSource.PlayClipAtPoint (use_sound, Camera.main.transform.position);
+            BoomerangGO.GetComponent<SphereCollider>().enabled = true;
             BoomerangAttack();
+            
             lastTime = Time.time;
         }
     }
@@ -101,6 +103,7 @@ public class UseBoomerang : Weapon {
         animator.enabled = true;
         yield return new WaitForSeconds(1.2f);
         BoomerangGO.GetComponent<Animator>().enabled = false;
+        BoomerangGO.GetComponent<SphereCollider>().enabled = false;
         BoomerangGO.GetComponent<Renderer>().enabled = false;
     }
 }
