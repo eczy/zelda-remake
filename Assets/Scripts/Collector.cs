@@ -5,6 +5,7 @@ using UnityEngine;
 public class Collector : MonoBehaviour {
 
 	public AudioClip rupee_collection_sound_clip;
+	public AudioClip heart_collection_sound_clip;
 
 	Inventory inventory;
 	Health health;
@@ -37,10 +38,12 @@ public class Collector : MonoBehaviour {
 		} else if (object_collided_with.tag == "heart") {
 			if (health != null)
 				health.Heal (1);
+			AudioSource.PlayClipAtPoint (heart_collection_sound_clip, Camera.main.transform.position);
 			Destroy (object_collided_with);
 		} else if (object_collided_with.tag == "key") {
 			if (inventory != null)
 				inventory.AddKeys (1);
+			AudioSource.PlayClipAtPoint (heart_collection_sound_clip, Camera.main.transform.position);
 			Destroy (object_collided_with);
 		} else if (object_collided_with.tag == "bomb") {
 			if (inventory != null)

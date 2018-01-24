@@ -16,6 +16,7 @@ public class flyingSword : MonoBehaviour {
 	public Sprite shoot_right_sprite;
 	public float reload_time = 1.0f;
 	public float control_delay = 0.25f;
+	public AudioClip use_sound;
 
 	ArrowKeyMovement controller;
 	Inventory inventory;
@@ -38,6 +39,7 @@ public class flyingSword : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (sword.usage_key) && !reloading && (playerHealth.GetHealth()==playerHealth.max_health)) {
+			AudioSource.PlayClipAtPoint (use_sound, Camera.main.transform.position);
 			StartCoroutine(Shoot ());
 		}
 	}

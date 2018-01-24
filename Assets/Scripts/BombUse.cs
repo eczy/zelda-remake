@@ -7,6 +7,7 @@ public class BombUse : Weapon {
 	public Bomb bomb;
 	public float spawn_distance = 1f;
 	public float reload_time = 2f;
+	public AudioClip bomb_set_sound;
 
 	bool can_set_bomb = true;
 	ArrowKeyMovement controller;
@@ -37,6 +38,7 @@ public class BombUse : Weapon {
 		Vector3 forward = controller.Forward();
 
 		Bomb spawned_bomb = Instantiate (bomb, transform.position + forward * spawn_distance, transform.rotation);
+		AudioSource.PlayClipAtPoint (bomb_set_sound, Camera.main.transform.position);
 		yield return new WaitForSeconds (reload_time);
 		can_set_bomb = true;
 	}

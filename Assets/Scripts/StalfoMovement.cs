@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StalfoMovement : MonoBehaviour {
+public class StalfoMovement : EnemyController {
 
 	Rigidbody rb;
-	public float move_time = 0.5f;
+	public float move_speed = 0.5f;
+	public float change_dir_time = 1f;
 
 	Vector3 current_dir;
-	int layer_mask = (1 << 8) | (1 << 9);
+	int layer_mask = ~((1 << 8) | (1 << 9));
+	Coroutine co;
 
 	Vector3[] directions = {
 		new Vector3 (1, 0, 0),
@@ -20,11 +22,19 @@ public class StalfoMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
-		StartCoroutine (Move ());
+		co = StartCoroutine (Move ());
 	}
 
 	void Update (){
 		Debug.DrawLine (transform.position, transform.position + current_dir * 1f);
+	}
+
+	void FixedUpdate(){
+		if (Physics.Raycast (transform.position, current_dir, 0.51f, layer_mask)) {
+			StopCoroutine (co);
+			co = StartCoroutine (Move ());
+		}
+		rb.velocity = current_dir * move_speed;
 	}
 
 	IEnumerator Move()
@@ -34,8 +44,6 @@ public class StalfoMovement : MonoBehaviour {
 		while (true) {
 			int i = Random.Range (0, 4);
 			direction = directions [i];
-			if (direction == -current_dir)
-				continue;
 			
 			if (Physics.Raycast (transform.position, direction, 1f, layer_mask) == false) {
 				current_dir = direction;
@@ -47,16 +55,7 @@ public class StalfoMovement : MonoBehaviour {
 			if (iter > 100)
 				break;
 		}
-
-		float t = 0f;
-		Vector3 start = rb.position;
-		Vector3 end = rb.position + current_dir;
-		while (t < move_time) {
-			t += Time.deltaTime;
-			float progress = t / move_time;
-			rb.position = Vector3.Lerp (start, end, progress);
-			yield return null;
-		}
-		StartCoroutine (Move ());
+		yield return new WaitForSeconds (change_dir_time);
+		co = StartCoroutine (Move ());
 	}
 }

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 54961139893236778}
   - component: {fileID: 135762785981034494}
   - component: {fileID: 114661892590033090}
+  - component: {fileID: 114522193285456474}
   m_Layer: 8
   m_Name: fireball
   m_TagString: Untagged
@@ -58,6 +59,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114522193285456474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1554754135200364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9874bb4dcc2c41b59505692a4aa044a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  health: 1
+  flash_duration: 0
+  sword_damage: 0
+  arrow_damage: 0
+  bomb_damage: 0
+  boom_damage: 0
+  knockback_force: 0
+  movement_delay_on_hit: 0
+  hurt_sound: {fileID: 0}
+  die_sound: {fileID: 0}
+  controller: {fileID: 0}
+  carried_object: {fileID: 0}
 --- !u!114 &114661892590033090
 MonoBehaviour:
   m_ObjectHideFlags: 1

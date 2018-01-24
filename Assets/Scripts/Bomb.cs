@@ -10,11 +10,13 @@ public class Bomb : MonoBehaviour {
 	public Sprite cloud_quarter;
 	public float fuse_time = 1f;
 	public float cloud_disperse_time = 1f;
+	public AudioClip bomb_detonate_sound;
 
 	// Use this for initialization
 	IEnumerator Start ()
 	{
 		yield return new WaitForSeconds (fuse_time);
+		AudioSource.PlayClipAtPoint (bomb_detonate_sound, Camera.main.transform.position);
 		GetComponent<SpriteRenderer> ().enabled = false;
 		GetComponent<SphereCollider> ().enabled = true;
 		SpriteRenderer[] clouds = {

@@ -16,6 +16,7 @@ public class UseBoomerang : Weapon {
     public Sprite shoot_down_sprite;
     public Sprite shoot_left_sprite;
     public Sprite shoot_right_sprite;
+	public AudioClip use_sound;
 
 
     private ArrowKeyMovement.Direction swingDirection;
@@ -40,6 +41,7 @@ public class UseBoomerang : Weapon {
         swingDirection = arrowkeymovement.linkDirection;
         if (Input.GetKeyDown(usage_key))
         {
+			AudioSource.PlayClipAtPoint (use_sound, Camera.main.transform.position);
             BoomerangAttack();
         }
     }

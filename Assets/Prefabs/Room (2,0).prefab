@@ -6949,6 +6949,7 @@ MonoBehaviour:
   - {fileID: 1013933610706616}
   unlocked_door:
   - {fileID: 1108064420993800}
+  unlock_sound: {fileID: 0}
 --- !u!114 &114263706456190790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7004,6 +7005,7 @@ MonoBehaviour:
   unlocked_door:
   - {fileID: 1258981333021662}
   - {fileID: 1960167571872484}
+  unlock_sound: {fileID: 8300000, guid: 2abfc22d689edd045871fdd9e8329e21, type: 3}
 --- !u!114 &114875808463682656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7021,6 +7023,7 @@ MonoBehaviour:
   - {fileID: 1340580248164530}
   unlocked_door:
   - {fileID: 1283414538646226}
+  unlock_sound: {fileID: 0}
 --- !u!212 &212016588833125392
 SpriteRenderer:
   m_ObjectHideFlags: 1

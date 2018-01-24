@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4863513582531752}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 212036144653338742}
   - component: {fileID: 65273290575788542}
   - component: {fileID: 114067428966851912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 114911488239296386}
   - component: {fileID: 114245859539037316}
   - component: {fileID: 114145358240131262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 95707336709678698}
   - component: {fileID: 114585679908528190}
   - component: {fileID: 135597409798905930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boomerang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849430212392308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.5, y: 4.5, z: 0}
+  m_LocalPosition: {x: 39.5, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4863513582531752}
@@ -303,6 +303,7 @@ MonoBehaviour:
   bomb: {fileID: 114770317386229808, guid: 496532e94252f8b4db98746176177ae8, type: 2}
   spawn_distance: 1
   reload_time: 2
+  bomb_set_sound: {fileID: 8300000, guid: 926ffb722b9ce324db28ae5e970868a9, type: 3}
 --- !u!114 &114280777443142842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,6 +316,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usage_key: 0
+  full_health_use_sound: {fileID: 8300000, guid: f93c35a879f055e40962a301f1d813e5,
+    type: 3}
+  use_sound: {fileID: 8300000, guid: 07a3eba47e898ea4d9f9003b50fb0346, type: 3}
   shoot_up_sprite: {fileID: 21300052, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   shoot_down_sprite: {fileID: 21300048, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   shoot_left_sprite: {fileID: 21300050, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
@@ -385,6 +389,7 @@ MonoBehaviour:
   shoot_right_sprite: {fileID: 21300054, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   reload_time: 1
   control_delay: 0.25
+  use_sound: {fileID: 8300000, guid: e4455a72f4750fe4186a44c11b84b2be, type: 3}
 --- !u!114 &114710550537465828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,6 +406,7 @@ MonoBehaviour:
   shoot_down_sprite: {fileID: 21300048, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   shoot_left_sprite: {fileID: 21300050, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   shoot_right_sprite: {fileID: 21300054, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
+  use_sound: {fileID: 8300000, guid: e4455a72f4750fe4186a44c11b84b2be, type: 3}
 --- !u!114 &114733307616674096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -427,6 +433,7 @@ MonoBehaviour:
   shoot_right_sprite: {fileID: 21300054, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   reload_time: 1
   control_delay: 0.25
+  use_sound: {fileID: 8300000, guid: f93c35a879f055e40962a301f1d813e5, type: 3}
 --- !u!114 &114746229199038628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -438,12 +445,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3c26f8b24244dc39c15a5b2be7c268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 4
   max_health: 4
   recovery_time: 0.5
   control_disable_time: 0.25
   knockback_force: 15
   death_panel: {fileID: 0}
+  hurt_sound: {fileID: 8300000, guid: 370adabeabc9d814db54d764c0376212, type: 3}
+  die_sound: {fileID: 8300000, guid: b5bc1e36f26c36b4fb8de4f53c24cdf0, type: 3}
 --- !u!114 &114806179365928422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -470,6 +479,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rupee_collection_sound_clip: {fileID: 8300000, guid: 86d45409ecaf74b8f8cfce1f5e950f20,
+    type: 3}
+  heart_collection_sound_clip: {fileID: 8300000, guid: 23cbcffdc62c26540b8ba0d9840f075b,
     type: 3}
 --- !u!114 &114911488239296386
 MonoBehaviour:
@@ -504,7 +515,7 @@ SphereCollider:
   m_GameObject: {fileID: 1863923150397430}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0.018480413, y: 0.0029179752, z: 0}
@@ -585,7 +596,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 45afd34443b96473598b76e2b1778b4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

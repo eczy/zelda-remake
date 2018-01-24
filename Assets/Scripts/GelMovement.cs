@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GelMovement : MonoBehaviour {
+public class GelMovement : EnemyController {
 
 	Rigidbody rb;
 	public float max_move_delay = 1f;
 	public float min_move_delay = 0.1f;
 	public float move_time = 0.5f;
+	float move_speed;
 
-	int layer_mask = (1 << 8) | (1 << 9);
+	Vector3 current_dir;
+	int layer_mask = ~((1 << 8) | (1 << 9));
+	Coroutine co;
 
 	Vector3[] directions = {
 		new Vector3 (1, 0, 0),
@@ -21,7 +24,12 @@ public class GelMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
-		StartCoroutine (Move ());
+		co = StartCoroutine (Move ());
+		move_speed = 1 / move_time;
+	}
+
+	void Update (){
+		Debug.DrawLine (transform.position, transform.position + current_dir * 1f);
 	}
 
 	IEnumerator Move()
@@ -31,25 +39,24 @@ public class GelMovement : MonoBehaviour {
 		while (true) {
 			int i = Random.Range (0, 4);
 			direction = directions [i];
-			if (!Physics.Raycast (transform.position, direction, layer_mask))
-				break;
+			if (direction == -current_dir)
+				continue;
 
+			if (Physics.Raycast (transform.position, direction, 1f, layer_mask) == false) {
+				current_dir = direction;
+				break;
+			}
+
+			// Prevent infinite looping
+			iter++;
 			if (iter > 100)
 				break;
 		}
-			
-		float move_delay = Random.Range (min_move_delay, max_move_delay);
-		yield return new WaitForSeconds (move_delay);
 
-		float t = 0f;
-		Vector3 start = rb.position;
-		Vector3 end = rb.position + direction;
-		while (t < move_time) {
-			t += Time.deltaTime;
-			float progress = t / move_time;
-			rb.position = Vector3.Lerp (start, end, progress);
-			yield return null;
-		}
-		StartCoroutine (Move ());
+		yield return new WaitForSeconds (Random.Range(min_move_delay, max_move_delay));
+		rb.velocity = current_dir * move_speed;
+		yield return new WaitForSeconds (move_time);
+		rb.velocity = Vector3.zero;
+		co = StartCoroutine (Move ());
 	}
 }

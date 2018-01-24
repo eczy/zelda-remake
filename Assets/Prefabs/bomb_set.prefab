@@ -60,6 +60,7 @@ MonoBehaviour:
   cloud_quarter: {fileID: 21300004, guid: 280ae64a075861147b2b19cf25f91bdc, type: 3}
   fuse_time: 1
   cloud_disperse_time: 1
+  bomb_detonate_sound: {fileID: 8300000, guid: 7c0013f83a8566847a2147e2a9df56d6, type: 3}
 --- !u!135 &135681726381149886
 SphereCollider:
   m_ObjectHideFlags: 1

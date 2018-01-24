@@ -16,6 +16,7 @@ public class Bow : Weapon {
 	public Sprite shoot_right_sprite;
 	public float reload_time = 1.0f;
 	public float control_delay = 0.25f;
+	public AudioClip use_sound;
 
 	ArrowKeyMovement controller;
 	Inventory inventory;
@@ -45,7 +46,7 @@ public class Bow : Weapon {
 			Debug.Log ("Cannot shoot arrows with no rupees");
 			yield break;
 		}
-
+		AudioSource.PlayClipAtPoint (use_sound, Camera.main.transform.position);
 		controller.DisableControls ();
 		reloading = true;
 

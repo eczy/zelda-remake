@@ -5,7 +5,7 @@ using UnityEngine;
 public class pushable_wall : MonoBehaviour {
 
 	public float movement_time = 1f;
-	public Door secret_door;
+	public Door secret_door = null;
 
 	bool moving = false;
 	Rigidbody rb;
@@ -20,7 +20,7 @@ public class pushable_wall : MonoBehaviour {
 		if (moving)
 			return;
 		
-		if (coll.collider.CompareTag("Player"))
+		if (coll.collider.GetComponent<ArrowKeyMovement>() != null)
         {
 			Vector3 direction;
 			Vector3 diff = transform.position - coll.collider.transform.position;
@@ -47,6 +47,8 @@ public class pushable_wall : MonoBehaviour {
 			yield return null;
 		}
 		rb.position = end;
-		secret_door.Unlock ();
+		rb.isKinematic = true;
+		if (secret_door != null)
+			secret_door.Unlock ();
 	}
 }

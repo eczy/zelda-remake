@@ -11,6 +11,8 @@ public class swingSword : Weapon {
 	GameObject WeaponGO;
 	GameObject SwordGO;
 
+	public AudioClip full_health_use_sound;
+	public AudioClip use_sound;
 	public Sprite shoot_up_sprite;
 	public Sprite shoot_down_sprite;
 	public Sprite shoot_left_sprite;
@@ -19,7 +21,7 @@ public class swingSword : Weapon {
 	public float control_disable_time = 0.2f;
 	public float reload_time = 0.1f;
     private float currentHealth;
-    private int max_health;
+    private float max_health;
     private ArrowKeyMovement.Direction swingDirection;
 	bool reloading = false;
     //private bool pressedX = false;
@@ -44,18 +46,13 @@ public class swingSword : Weapon {
 	
 	// Update is called once per frame
 	void Update () {
-        //pressedX = false;
         animator.SetBool("pressedX", false);
 		changeFaceDirectionBool();
-		//SwordGO.GetComponent<Renderer> ().enabled = false;
-		//SwordGO.GetComponent<BoxCollider> ().enabled = false;
 		if (Input.GetKeyDown(usage_key) && !reloading && (playerHealth.GetHealth()<playerHealth.max_health))
         { 
             animator.SetBool("pressedX", true);
-			//Debug.Log ("current health is" + currentHealth);
-			//Debug.Log ("max health is" + max_health);
+			AudioSource.PlayClipAtPoint (use_sound, Camera.main.transform.position);
 			LinkAttack();
-
         }
 
 
@@ -112,15 +109,6 @@ public class swingSword : Weapon {
 		SwordGO.GetComponent<Renderer> ().enabled = false;
 		SwordGO.GetComponent<BoxCollider> ().enabled = false;
 		reloading = false;
-	}
-
-	//heal up link by 1 if he picks up hearts
-	void OnTriggerEnter (Collider coll){
-		if (coll.gameObject.tag.Equals("heart")==true) {
-			Debug.Log ("setting health");
-			currentHealth++;
-			playerHealth.SetHealth (currentHealth);
-		}
 	}
 
 	void changeFaceDirectionBool(){

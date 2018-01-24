@@ -481,6 +481,7 @@ MonoBehaviour:
   - {fileID: 1384466008948428}
   unlocked_door:
   - {fileID: 1617752080588858}
+  unlock_sound: {fileID: 0}
 --- !u!114 &114351124487479632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -498,6 +499,7 @@ MonoBehaviour:
   - {fileID: 1101279009247212}
   unlocked_door:
   - {fileID: 1763321105955628}
+  unlock_sound: {fileID: 0}
 --- !u!114 &114458843033518820
 MonoBehaviour:
   m_ObjectHideFlags: 1

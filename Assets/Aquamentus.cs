@@ -16,11 +16,13 @@ public class Aquamentus : MonoBehaviour {
 	public float fireball_speed = 2f;
 	public float shot_spread = 0.25f;
 	public Transform player;
+	public Door death_door;
 
 	bool canshoot = true;
 	bool forward = true;
 	Animator anim;
 	Rigidbody rb;
+	Enemy status;
 	float startposx;
 
 	Vector3[] shootdirs = {
@@ -28,6 +30,8 @@ public class Aquamentus : MonoBehaviour {
 		new Vector3 (-3, -1, 0).normalized,
 		new Vector3 (-1, 0, 0)
 	};
+
+	Rigidbody[] fireballs;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +41,7 @@ public class Aquamentus : MonoBehaviour {
 		leftlim = startposx + leftlim;
 		rightlim = startposx + rightlim;
 
+		status = GetComponent<Enemy> ();
 		StartCoroutine (Move ());
 	}
 	
@@ -70,15 +75,21 @@ public class Aquamentus : MonoBehaviour {
 		shootdirs [2] = fireball_spawnpoint.forward;
 	}
 
+	void OnDestroy(){
+		death_door.Unlock ();
+
+		foreach (Rigidbody f in fireballs) {
+			Destroy (f.gameObject);
+		}
+	}
+
 	IEnumerator Shoot (){
 		canshoot = false;
 		anim.SetBool ("firing", true);
 
-		Rigidbody[] fireballs = {
-			Instantiate (fireball, fireball_spawnpoint.position, transform.rotation),
-			Instantiate (fireball, fireball_spawnpoint.position, transform.rotation),
-			Instantiate (fireball, fireball_spawnpoint.position, transform.rotation)
-		};
+		fireballs [0] = Instantiate (fireball, fireball_spawnpoint.position, transform.rotation);
+		fireballs [1] = Instantiate (fireball, fireball_spawnpoint.position, transform.rotation);
+		fireballs [2] = Instantiate (fireball, fireball_spawnpoint.position, transform.rotation);
 
 		yield return new WaitForSeconds (power_up_time);
 

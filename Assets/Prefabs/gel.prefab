@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114805228671764212}
   - component: {fileID: 54366504029462532}
   - component: {fileID: 135849568279256312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1241731487451800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.07146, y: 36.30021, z: 0}
+  m_LocalPosition: {x: 52, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,8 +94,13 @@ MonoBehaviour:
   sword_damage: 1
   arrow_damage: 1
   bomb_damage: 1
+  boom_damage: 0
   knockback_force: 0
   movement_delay_on_hit: 0.5
+  hurt_sound: {fileID: 8300000, guid: 370adabeabc9d814db54d764c0376212, type: 3}
+  die_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}
+  controller: {fileID: 114805228671764212}
+  carried_object: {fileID: 0}
 --- !u!114 &114805228671764212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c1ed86d42724a4fa72c49db357bed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_move_delay: 0.5
+  max_move_delay: 1
   min_move_delay: 0.05
   move_time: 0.25
 --- !u!135 &135849568279256312
@@ -120,7 +125,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212126582134449830
 SpriteRenderer:

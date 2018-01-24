@@ -31,9 +31,13 @@ public class KeeseMovement : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter()
+	void FixedUpdate ()
 	{
-		rb.velocity = -vel;
+		if (Physics.Raycast (transform.position, Vector3.right, 0.51f) || Physics.Raycast (transform.position, Vector3.left, 0.51f))
+			vel.Scale (new Vector3 (-1, 1, 1));
+		else if (Physics.Raycast (transform.position, Vector3.up, 0.51f) || Physics.Raycast (transform.position, Vector3.down, 0.51f))
+			vel.Scale (new Vector3 (1, -1, 1));
+		rb.velocity = vel;
 	}
 
 	IEnumerator Fly()
@@ -98,8 +102,10 @@ public class KeeseMovement : MonoBehaviour {
 
 		rb.velocity = Vector3.zero;
 		anim.speed = 0f;
+		rb.isKinematic = true;
 
 		yield return new WaitForSeconds (rest_time);
+		rb.isKinematic = false;
 		can_fly = true;
 	}
 }

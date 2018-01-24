@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour {
 
 	public float health = 3.0f;
-	public int max_health = 3;
+	public float max_health = 3f;
 	public float recovery_time = 2.0f;
 	public float control_disable_time = 0.5f;
 	public float knockback_force = 10.0f;
 	public GameObject death_panel;
+	public AudioClip hurt_sound;
+	public AudioClip die_sound;
 
 	ArrowKeyMovement controller;
 	Rigidbody rb;
@@ -24,6 +26,10 @@ public class Health : MonoBehaviour {
 		controller = GetComponent<ArrowKeyMovement> ();
 		rb = GetComponent<Rigidbody> ();
 		flash = GetComponent<FlashWhenDamaged> ();
+	}
+
+	public bool FullHealthFlag(){
+		return max_health == health;
 	}
 
 	void OnCollisionEnter (Collision coll)
@@ -41,7 +47,11 @@ public class Health : MonoBehaviour {
 		
 		co_recover = StartCoroutine (Recover());
 		co_pause_controls = StartCoroutine (PauseControls());
-		Knockback(coll.contacts [0].normal);
+		StartCoroutine(Knockback(coll.contacts [0].normal));
+	}
+
+	void OnCollisionStay(Collision coll){
+		OnCollisionEnter (coll);
 	}
 
 	public float GetHealth()
@@ -58,6 +68,7 @@ public class Health : MonoBehaviour {
 
 	void Damage(float damage)
 	{
+		AudioSource.PlayClipAtPoint (hurt_sound, Camera.main.transform.position);
 		health -= damage;
 		if (health <= 0) {
 			health = 0;
@@ -72,9 +83,10 @@ public class Health : MonoBehaviour {
 			health = max_health;
 	}
 
-	void Knockback(Vector3 direction)
+	IEnumerator Knockback(Vector3 direction)
 	{
 		rb.AddForce (direction * knockback_force, ForceMode.Impulse);
+		yield return null;
 	}
 
 	IEnumerator Recover()
@@ -96,9 +108,11 @@ public class Health : MonoBehaviour {
 	void Die()
 	{
 		Debug.Log ("You died!");
+		AudioSource.PlayClipAtPoint (die_sound, Camera.main.transform.position);
 		StopCoroutine (co_recover);
 		StopCoroutine (co_pause_controls);
 		controller.DisableControls ();
 		death_panel.SetActive (true);
+		gameObject.SetActive (false);
 	}
 }

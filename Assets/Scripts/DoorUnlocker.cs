@@ -22,6 +22,8 @@ public class DoorUnlocker : MonoBehaviour {
 		if (door == null || door.locked == false)
 			return;
 
+		Debug.Log ("Hit a door");
+
 		int keys = inventory.GetKeys ();
 		if (keys > 0) {
 			door.Unlock ();

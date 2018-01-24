@@ -202,6 +202,7 @@ MonoBehaviour:
   - {fileID: 1490148863904720}
   unlocked_door:
   - {fileID: 1781855597914236}
+  unlock_sound: {fileID: 0}
 --- !u!212 &212017230788426384
 SpriteRenderer:
   m_ObjectHideFlags: 1

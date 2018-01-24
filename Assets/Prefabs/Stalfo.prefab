@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 212570416965864872}
   - component: {fileID: 114392417752733236}
   - component: {fileID: 114887359228555614}
-  - component: {fileID: 65591659099520104}
   - component: {fileID: 54796589108975502}
   - component: {fileID: 95020470238414016}
   - component: {fileID: 114358506177099540}
+  - component: {fileID: 135759447720097778}
   m_Layer: 8
   m_Name: Stalfo
   m_TagString: stalfo
@@ -54,25 +54,13 @@ Rigidbody:
   m_GameObject: {fileID: 1647773875055372}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 5
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!65 &65591659099520104
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647773875055372}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.95, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95020470238414016
 Animator:
   serializedVersion: 3
@@ -112,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3741235de5350b04b8c5299737ab3cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_time: 0.5
+  move_speed: 2
+  change_dir_time: 1
 --- !u!114 &114887359228555614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,13 +114,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  health: 5
+  health: 2
   flash_duration: 0.5
   sword_damage: 1
   arrow_damage: 1
   bomb_damage: 1
+  boom_damage: 0
   knockback_force: 15
-  movement_delay_on_hit: 0.5
+  movement_delay_on_hit: 0.25
+  hurt_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}
+  die_sound: {fileID: 8300000, guid: 18aa5d8d6d1af304d82ca34af9a9b880, type: 3}
+  controller: {fileID: 114392417752733236}
+  carried_object: {fileID: 0}
+--- !u!135 &135759447720097778
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1647773875055372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.45
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212570416965864872
 SpriteRenderer:
   m_ObjectHideFlags: 1

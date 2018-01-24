@@ -8,12 +8,14 @@ public class Door : MonoBehaviour {
 	public GameObject main_camera;
 	public GameObject[] locked_door;
 	public GameObject[] unlocked_door;
+	public AudioClip unlock_sound;
 
 	public void Unlock ()
 	{
 		if (locked == false)
 			return;
 
+		AudioSource.PlayClipAtPoint (unlock_sound, Camera.main.transform.position);
 		Debug.Log ("Unlocking door");
 
 		locked = false;

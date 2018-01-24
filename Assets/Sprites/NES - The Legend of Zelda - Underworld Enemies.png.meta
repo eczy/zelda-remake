@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9444f89b769a2ef4297353839fd789ec
-timeCreated: 1516697955
+timeCreated: 1516784823
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,15 @@ TextureImporter:
     21300008: gel_0
     21300010: gel_1
     21300012: fireball_0
+    21300014: goriya_0
+    21300016: goriya_1
+    21300018: goriya_2
+    21300020: goriya_3
+    21300022: goriya_4
+    21300024: goriya_5
+    21300026: goriya_6
+    21300028: goriya_7
+    21300030: slider_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -186,6 +195,132 @@ TextureImporter:
         serializedVersion: 2
         x: 136
         y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: goriya_0
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: goriya_1
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: goriya_2
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: goriya_3
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: goriya_4
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: goriya_5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: goriya_6
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: goriya_7
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: slider_0
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 120
         width: 16
         height: 16
       alignment: 0

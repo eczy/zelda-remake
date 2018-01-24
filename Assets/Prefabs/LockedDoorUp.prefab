@@ -333,6 +333,7 @@ MonoBehaviour:
   unlocked_door:
   - {fileID: 1056770295794452}
   - {fileID: 1745051094133384}
+  unlock_sound: {fileID: 8300000, guid: 2abfc22d689edd045871fdd9e8329e21, type: 3}
 --- !u!212 &212125056130020858
 SpriteRenderer:
   m_ObjectHideFlags: 1

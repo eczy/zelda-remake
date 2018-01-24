@@ -216,6 +216,7 @@ MonoBehaviour:
   - {fileID: 1061622366108204}
   unlocked_door:
   - {fileID: 1494483681733044}
+  unlock_sound: {fileID: 8300000, guid: 2abfc22d689edd045871fdd9e8329e21, type: 3}
 --- !u!114 &114817609852116240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,7 +271,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212380811079415640
 SpriteRenderer:
@@ -314,7 +315,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212438335647074014
 SpriteRenderer:
@@ -358,5 +359,5 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
