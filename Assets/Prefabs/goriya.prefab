@@ -22,7 +22,12 @@ GameObject:
   - component: {fileID: 212039973158480740}
   - component: {fileID: 114502396486456600}
   - component: {fileID: 95300633392551824}
-  m_Layer: 0
+  - component: {fileID: 54909121217460540}
+  - component: {fileID: 65004539003868152}
+  - component: {fileID: 114856291046506400}
+  - component: {fileID: 114772284626936106}
+  - component: {fileID: 114000035736915110}
+  m_Layer: 8
   m_Name: goriya
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,6 +47,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54909121217460540
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266453492643184}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!65 &65004539003868152
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266453492643184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.9, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95300633392551824
 Animator:
   serializedVersion: 3
@@ -59,6 +91,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000035736915110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266453492643184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11bd4703ce6c41e8b1e4b74d35f9205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114502396486456600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,18 +114,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  health: 3
+  health: 5
   flash_duration: 0.5
   sword_damage: 1
   arrow_damage: 1
   bomb_damage: 1
   boom_damage: 0
-  knockback_force: 0
+  knockback_force: 15
   movement_delay_on_hit: 0.5
-  hurt_sound: {fileID: 0}
-  die_sound: {fileID: 0}
-  controller: {fileID: 0}
+  hurt_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}
+  die_sound: {fileID: 8300000, guid: 18aa5d8d6d1af304d82ca34af9a9b880, type: 3}
+  controller: {fileID: 114772284626936106}
   carried_object: {fileID: 0}
+--- !u!114 &114772284626936106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266453492643184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8dcc76a3b5c0a448fcad9ec1ee71bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move_speed: 2
+  change_dir_time: 1
+  reload_time: 2
+  fire_delay: 1
+  current_dir: {x: 0, y: 0, z: 0}
+  boomerang: {fileID: 54756837029246220, guid: 77182e88300bece49a558adbd84daf88, type: 2}
+  boom_spawn_distance: 1
+  throw_speed: 10
+  return_speed: 0.1
+--- !u!114 &114856291046506400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266453492643184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1445d2e8273830e459b3324cd378a884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212039973158480740
 SpriteRenderer:
   m_ObjectHideFlags: 1

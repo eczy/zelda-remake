@@ -9,6 +9,7 @@ public class Door : MonoBehaviour {
 	public GameObject[] locked_door;
 	public GameObject[] unlocked_door;
 	public AudioClip unlock_sound;
+	public Door other_side = null;
 
 	public void Unlock ()
 	{
@@ -25,5 +26,8 @@ public class Door : MonoBehaviour {
 		foreach (GameObject obj in unlocked_door) {
 			obj.SetActive (true);
 		}
+
+		if (other_side != null)
+			other_side.Unlock ();
 	}
 }

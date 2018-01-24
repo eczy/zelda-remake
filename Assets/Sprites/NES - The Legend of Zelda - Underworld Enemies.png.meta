@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9444f89b769a2ef4297353839fd789ec
-timeCreated: 1516784823
+timeCreated: 1516800738
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -20,6 +20,8 @@ TextureImporter:
     21300026: goriya_6
     21300028: goriya_7
     21300030: slider_0
+    21300032: wallmaster_0
+    21300034: wallmaster_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -320,6 +322,34 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1184
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wallmaster_0
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wallmaster_1
+      rect:
+        serializedVersion: 2
+        x: 872
         y: 120
         width: 16
         height: 16

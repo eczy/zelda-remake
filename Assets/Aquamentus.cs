@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Aquamentus : MonoBehaviour {
+public class Aquamentus : EnemyController {
 
 	public float max_reload_time = 3f;
 	public float min_reload_time = 0.5f;
@@ -31,7 +31,7 @@ public class Aquamentus : MonoBehaviour {
 		new Vector3 (-1, 0, 0)
 	};
 
-	Rigidbody[] fireballs;
+	Rigidbody[] fireballs = new Rigidbody[3];
 
 	// Use this for initialization
 	void Start () {

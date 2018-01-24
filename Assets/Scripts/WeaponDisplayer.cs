@@ -17,10 +17,12 @@ public class WeaponDisplayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		Debug.Log (text_component == null);
 		if (w == null || text_component == null)
 			return;
 
 		string weapon_A_name, weapon_B_name;
+
 
 		if (w.weapon_A is swingSword)
 			weapon_A_name = "Sword";
@@ -43,6 +45,8 @@ public class WeaponDisplayer : MonoBehaviour {
 			weapon_B_name = "Boomerang";
 		else
 			weapon_B_name = "None";
+
+		Debug.Log (w.weapon_A.GetType ());
 
 		text_component.text = "Weapon A: " + weapon_A_name + "\nWeapon B: " + weapon_B_name;
 	}

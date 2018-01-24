@@ -23,7 +23,8 @@ public class Enemy : MonoBehaviour {
 	{
 		flash = GetComponent<FlashWhenDamaged> ();
 		rb = GetComponent<Rigidbody> ();
-		carried_object.GetComponent<Collider> ().enabled = false;
+		if (carried_object)
+			carried_object.GetComponent<Collider> ().enabled = false;
 	}
 
 	void Update()

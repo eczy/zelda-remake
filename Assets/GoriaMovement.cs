@@ -10,8 +10,12 @@ public class GoriaMovement : EnemyController {
 	public float reload_time = 1f;
 	public float fire_delay = 5f;
 	public Vector3 current_dir;
+	public Rigidbody boomerang;
+	public float boom_spawn_distance = 1f;
+	public float throw_speed = 3f;
+	public float return_speed = 1f;
 
-	bool can_throw;
+	bool can_throw = true;
 	int layer_mask = ~((1 << 8) | (1 << 9));
 	Coroutine co;
 	Animator anim;
@@ -25,6 +29,7 @@ public class GoriaMovement : EnemyController {
 
 	// Use this for initialization
 	void Start () {
+		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody> ();
 		co = StartCoroutine (Move ());
 	}
@@ -33,7 +38,7 @@ public class GoriaMovement : EnemyController {
 		Debug.DrawLine (transform.position, transform.position + current_dir * 1f);
 
 		if (can_throw)
-			StartCoroutine (ThrowBoomerang);
+			StartCoroutine (ThrowBoomerang());
 	}
 
 	void FixedUpdate(){
@@ -45,7 +50,7 @@ public class GoriaMovement : EnemyController {
 	}
 
 	IEnumerator Move()
-	{
+	{		
 		Vector3 direction;
 		int iter = 0;
 		while (true) {
@@ -67,12 +72,28 @@ public class GoriaMovement : EnemyController {
 	}
 
 	IEnumerator ThrowBoomerang(){
-		Vector3 temp = current_dir;
-		current_dir = Vector3.zero;
-		anim.speed = 0;
-
+		can_throw = false;
 		yield return new WaitForSeconds (fire_delay);
+		Debug.Log ("Goria throwing boomerang at " + current_dir.ToString());
 
+		Vector3 throw_pos = transform.position;
+		Vector3 throw_dir = current_dir;
+		Rigidbody boom = Instantiate (boomerang, transform.position + throw_dir * boom_spawn_distance, transform.rotation);
+		boom.velocity = throw_dir * throw_speed;
 
+		int iter = 0;
+		while (Vector3.Distance(boom.position, transform.position) > 0.5){
+			boom.velocity += (transform.position - boom.position) * return_speed;
+			++iter;
+			if (iter > 1000)
+				break;
+
+			yield return null;
+		}
+
+		Destroy (boom.gameObject);
+
+		yield return new WaitForSeconds (reload_time);
+		can_throw = true;
 	}
 }
