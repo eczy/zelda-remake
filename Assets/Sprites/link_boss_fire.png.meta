@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3ded3d1ee7cdc294f99e8a52a733982e
-timeCreated: 1517001564
+guid: 2812bdcc89dbd904285d621bcf621dac
+timeCreated: 1517001243
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: link_with_boss_0
+    21300000: link_boss_fire_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -121,12 +121,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: link_with_boss_0
+      name: link_boss_fire_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 32
-        width: 26
+        x: 28
+        y: 31
+        width: 27
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}

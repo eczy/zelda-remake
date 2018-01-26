@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3ded3d1ee7cdc294f99e8a52a733982e
-timeCreated: 1517001564
+guid: 585124a38d167af44b6c1014e9f59863
+timeCreated: 1517000952
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: link_with_boss_0
+    21300000: link_boss_walking_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -121,12 +121,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: link_with_boss_0
+      name: link_boss_walking_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 32
-        width: 26
+        x: 27
+        y: 23
+        width: 27
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
