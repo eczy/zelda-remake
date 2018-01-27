@@ -18,7 +18,6 @@ public class UseBoomerang : Weapon {
     public Sprite shoot_right_sprite;
 	public AudioClip use_sound;
 
-
     private ArrowKeyMovement.Direction swingDirection;
     private float animationTime = 1.4f;
     private float lastTime;

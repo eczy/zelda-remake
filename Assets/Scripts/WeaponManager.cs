@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour {
 
 	public Weapon[] weapons;
-
 	public Weapon weapon_A;
 	public Weapon weapon_B;
+	public Text weapontext;
 	KeyCode[] weapon_keys;
 	KeyCode[] mapped_keys;
 
@@ -45,5 +46,45 @@ public class WeaponManager : MonoBehaviour {
 				weapon_B = weapons [i];
 			}
 		}
+
+		if (weapontext == null)
+			return;
+
+		string weapon_A_name, weapon_B_name;
+
+		if (weapon_A != null) {
+			if (weapon_A is swingSword)
+				weapon_A_name = "Sword";
+			else if (weapon_A is Bow)
+				weapon_A_name = "Bow";
+			else if (weapon_A is BombUse)
+				weapon_A_name = "Bomb";
+			else if (weapon_A is UseBoomerang)
+				weapon_A_name = "Boomerang";
+			else
+				weapon_A_name = "None";
+		} else {
+			Debug.Log ("Weapon A null");
+			weapon_A_name = "None";
+		}
+
+		if (weapon_B != null) {
+			if (weapon_B is swingSword)
+				weapon_B_name = "Sword";
+			else if (weapon_B is Bow)
+				weapon_B_name = "Bow";
+			else if (weapon_B is BombUse)
+				weapon_B_name = "Bomb";
+			else if (weapon_B is UseBoomerang)
+				weapon_B_name = "Boomerang";
+			else
+				weapon_B_name = "None";
+		} else {
+			Debug.Log ("Weapon B null");
+			weapon_B_name = "None";
+		}
+
+		weapontext.text = "Weapon A: " + weapon_A_name + "\nWeapon B: " + weapon_B_name;
+
 	}
 }

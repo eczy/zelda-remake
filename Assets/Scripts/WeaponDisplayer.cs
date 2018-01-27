@@ -17,36 +17,43 @@ public class WeaponDisplayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log (text_component == null);
 		if (w == null || text_component == null)
 			return;
 
 		string weapon_A_name, weapon_B_name;
 
-
-		if (w.weapon_A is swingSword)
-			weapon_A_name = "Sword";
-		else if (w.weapon_A is Bow)
-			weapon_A_name = "Bow";
-		else if (w.weapon_A is BombUse)
-			weapon_A_name = "Bomb";
-		else if (w.weapon_A is UseBoomerang)
-			weapon_A_name = "Boomerang";
-		else
+		if (w.weapon_A != null) {
+			if (w.weapon_A.GetComponent<swingSword> () != null)
+				weapon_A_name = "Sword";
+			else if (w.weapon_A.GetComponent<Bow> () != null)
+				weapon_A_name = "Bow";
+			else if (w.weapon_A.GetComponent<BombUse> () != null)
+				weapon_A_name = "Bomb";
+			else if (w.weapon_A.GetComponent<UseBoomerang> () != null)
+				weapon_A_name = "Boomerang";
+			else
+				weapon_A_name = "None";
+		} else {
+			Debug.Log ("Weapon A null");
 			weapon_A_name = "None";
+		}
 
-		if (w.weapon_B is swingSword)
-			weapon_B_name = "Sword";
-		else if (w.weapon_B is Bow)
-			weapon_B_name = "Bow";
-		else if (w.weapon_B is BombUse)
-			weapon_B_name = "Bomb";
-		else if (w.weapon_B is UseBoomerang)
-			weapon_B_name = "Boomerang";
-		else
+		if (w.weapon_B != null) {
+			if (w.weapon_B.GetComponent<swingSword> () != null)
+				weapon_B_name = "Sword";
+			else if (w.weapon_B.GetComponent<Bow> () != null)
+				weapon_B_name = "Bow";
+			else if (w.weapon_B.GetComponent<BombUse> () != null)
+				weapon_B_name = "Bomb";
+			else if (w.weapon_B.GetComponent<UseBoomerang> () != null)
+				weapon_B_name = "Boomerang";
+			else
+				weapon_B_name = "None";
+		} else {
+			Debug.Log ("Weapon B null");
 			weapon_B_name = "None";
-
-		Debug.Log (w.weapon_A.GetType ());
+		}
+		
 
 		text_component.text = "Weapon A: " + weapon_A_name + "\nWeapon B: " + weapon_B_name;
 	}
