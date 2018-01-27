@@ -95,6 +95,13 @@ MonoBehaviour:
   die_sound: {fileID: 0}
   controller: {fileID: 0}
   carried_object: {fileID: 0}
+  heart_drop: {fileID: 0}
+  bomb_drop: {fileID: 0}
+  rupee_drop: {fileID: 0}
+  drop_prob: 0
+  heart_drop_prob: 0.35
+  bomb_drop_prob: 0.3
+  rupee_drop_prob: 0.35
 --- !u!114 &114783506996525190
 MonoBehaviour:
   m_ObjectHideFlags: 1
