@@ -38,12 +38,16 @@ public class WeaponManager : MonoBehaviour {
 					weapon_A.usage_key = KeyCode.None;
 				weapons [i].usage_key = weapon_keys [0];
 				weapon_A = weapons [i];
+				if (weapon_B.usage_key == weapon_A.usage_key)
+					weapon_B = null;
 			}
 			if (Input.GetKey (weapon_keys [1]) && Input.GetKey (mapped_keys [i])) {
 				if (weapon_B != null)
 					weapon_B.usage_key = KeyCode.None;
 				weapons [i].usage_key = weapon_keys [1];
 				weapon_B = weapons [i];
+				if (weapon_A.usage_key == weapon_B.usage_key)
+					weapon_A = null;
 			}
 		}
 

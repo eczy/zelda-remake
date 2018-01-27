@@ -126,6 +126,13 @@ MonoBehaviour:
   die_sound: {fileID: 8300000, guid: 18aa5d8d6d1af304d82ca34af9a9b880, type: 3}
   controller: {fileID: 114392417752733236}
   carried_object: {fileID: 0}
+  heart_drop: {fileID: 4836873255246056, guid: 9d7d67df3522c924b8648bb2d2c96aec, type: 2}
+  bomb_drop: {fileID: 4032567152290800, guid: 69a0957156932ed4081e78201a980fc9, type: 2}
+  rupee_drop: {fileID: 4307950854637718, guid: 37c8f2b7aabaaa043991e249a78198a6, type: 2}
+  drop_prob: 0.25
+  heart_drop_prob: 0.35
+  bomb_drop_prob: 0.3
+  rupee_drop_prob: 0.35
 --- !u!135 &135759447720097778
 SphereCollider:
   m_ObjectHideFlags: 1

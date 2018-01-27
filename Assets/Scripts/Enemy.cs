@@ -16,6 +16,13 @@ public class Enemy : MonoBehaviour {
 	public AudioClip die_sound = null;
 	public EnemyController controller;
 	public Transform carried_object = null;
+	public Transform heart_drop;
+	public Transform bomb_drop;
+	public Transform rupee_drop;
+	public float drop_prob = 0.50f;
+	public float heart_drop_prob = 0.35f;
+	public float bomb_drop_prob = 0.30f;
+	public float rupee_drop_prob = 0.35f;
 	FlashWhenDamaged flash;
 	Rigidbody rb;
 
@@ -35,6 +42,21 @@ public class Enemy : MonoBehaviour {
 			if (carried_object != null) {
 				carried_object.GetComponent<Collider> ().enabled = true;
 				carried_object.parent = null;
+			}
+
+			float r = Random.value;
+			if (r < drop_prob) {
+				r = Random.value;
+				float heart_lim = heart_drop_prob;
+				float bomb_drop_lim = heart_lim + bomb_drop_prob;
+				float rupee_drop_lim = 1f;
+				if (r <= heart_lim) {
+					Instantiate (heart_drop, transform.position, transform.rotation);
+				} else if (r > heart_lim && r <= bomb_drop_lim) {
+					Instantiate (bomb_drop, transform.position, transform.rotation);
+				} else {
+					Instantiate (rupee_drop, transform.position, transform.rotation);
+				}
 			}
 			Destroy (gameObject);
 		}
