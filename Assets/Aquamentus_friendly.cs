@@ -10,13 +10,10 @@ public class Aquamentus_friendly : EnemyController {
 	public float delta_x = 0.1f;
 	public float change_dir_delay = 0.5f;
 	public Transform fireball_spawnpoint;
-	public float leftlim = -2;
-	public float rightlim = 2;
 	public Rigidbody fireball;
 	public float fireball_speed = 2f;
 	public float shot_spread = 0.25f;
-	public Transform player;
-	public Door death_door;
+	public Transform enemy;
 
 	bool canshoot = true;
 	bool forward = true;
@@ -38,8 +35,7 @@ public class Aquamentus_friendly : EnemyController {
 		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody> ();
 		startposx = transform.position.x;
-		leftlim = startposx + leftlim;
-		rightlim = startposx + rightlim;
+
 
 		status = GetComponent<Enemy> ();
 		//StartCoroutine (Move ());
@@ -50,29 +46,7 @@ public class Aquamentus_friendly : EnemyController {
 		if (canshoot)
 			StartCoroutine (Shoot ());
 
- //       float new_x;
- //       if (forward)
- //       {
- //           new_x = rb.position.x - delta_x;
- //           if (new_x < leftlim)
- //           {
- //               new_x = leftlim;
- //               forward = false;
- //           }
- //       }
- //       else
- //       {
- //           new_x = rb.position.x + delta_x;
- //           if (new_x > rightlim)
- //           {
- //               new_x = rightlim;
- //               forward = true;
- //           }
- //       }
- //       rb.position = new Vector3(new_x, rb.position.y, 0);
- //       Debug.DrawLine(new Vector3(leftlim, transform.position.y, 0), new Vector3(rightlim, transform.position.y, 0), Color.red);
-
-        //	Debug.DrawRay (fireball_spawnpoint.position, fireball_spawnpoint.forward);
+        Debug.DrawRay (fireball_spawnpoint.position, fireball_spawnpoint.forward);
 
         fireball_spawnpoint.forward = GetComponent<Transform>().forward - fireball_spawnpoint.transform.position;
 
@@ -81,13 +55,6 @@ public class Aquamentus_friendly : EnemyController {
 		shootdirs [2] = fireball_spawnpoint.forward;
 	}
 
-	void OnDestroy(){
-		death_door.Unlock ();
-
-		foreach (Rigidbody f in fireballs) {
-			Destroy (f.gameObject);
-		}
-	}
 
 	IEnumerator Shoot (){
 		canshoot = false;

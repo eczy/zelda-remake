@@ -9,6 +9,7 @@ TagManager:
   - key
   - heart
   - rupee
+  - fireball
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - enemy
   - player
   - enemy_walkthrough
-  - 
+  - fireball
   - 
   - 
   - 

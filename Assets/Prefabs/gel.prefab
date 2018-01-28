@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114805228671764212}
   - component: {fileID: 54366504029462532}
   - component: {fileID: 135849568279256312}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: gel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,6 +95,7 @@ MonoBehaviour:
   arrow_damage: 1
   bomb_damage: 1
   boom_damage: 1
+  fireball_damage: 1
   knockback_force: 0
   movement_delay_on_hit: 0.5
   hurt_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}

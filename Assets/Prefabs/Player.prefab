@@ -69,7 +69,6 @@ GameObject:
   - component: {fileID: 114733307616674096}
   - component: {fileID: 114601779399546180}
   - component: {fileID: 114710550537465828}
-  - component: {fileID: 114911488239296386}
   - component: {fileID: 114245859539037316}
   - component: {fileID: 114145358240131262}
   m_Layer: 9
@@ -146,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849430212392308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.5, y: 5.5, z: 0}
+  m_LocalPosition: {x: 19.960617, y: 4.1214643, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4863513582531752}
@@ -288,6 +287,7 @@ MonoBehaviour:
   - {fileID: 114710550537465828}
   weapon_A: {fileID: 0}
   weapon_B: {fileID: 0}
+  weapontext: {fileID: 0}
 --- !u!114 &114245859539037316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -453,6 +453,7 @@ MonoBehaviour:
   death_panel: {fileID: 0}
   hurt_sound: {fileID: 8300000, guid: 370adabeabc9d814db54d764c0376212, type: 3}
   die_sound: {fileID: 8300000, guid: b5bc1e36f26c36b4fb8de4f53c24cdf0, type: 3}
+  low_health_sound: {fileID: 0}
 --- !u!114 &114806179365928422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -482,20 +483,6 @@ MonoBehaviour:
     type: 3}
   heart_collection_sound_clip: {fileID: 8300000, guid: 23cbcffdc62c26540b8ba0d9840f075b,
     type: 3}
---- !u!114 &114911488239296386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1849430212392308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51dd82b54bec337408fda95433067c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons: []
-  weapon_A: {fileID: 0}
-  weapon_B: {fileID: 0}
 --- !u!114 &114965682495249688
 MonoBehaviour:
   m_ObjectHideFlags: 1
