@@ -26,7 +26,7 @@ public class getoff_boss : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown("x"))
+        if (Input.GetKeyDown("x") && !Input.GetKeyDown("z"))
         {
             Vector3 link_with_boss_position = link_with_boss.GetComponent<Transform>().position;
             Vector3 link_position = link_with_boss_position + new Vector3(-1.5f,0,0);

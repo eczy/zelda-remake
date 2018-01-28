@@ -21,7 +21,7 @@ public class pushable_wall : MonoBehaviour {
 		if (moving)
 			return;
 		
-		if (coll.collider.GetComponent<ArrowKeyMovement>() != null)
+		if (coll.collider.tag=="Player")
         {
 			Vector3 direction;
 			Vector3 diff = transform.position - coll.collider.transform.position;
