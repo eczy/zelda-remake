@@ -72,6 +72,8 @@ public class Enemy : MonoBehaviour {
 			flash.Flash (flash_duration);
 	}
 
+
+
 	void OnTriggerEnter(Collider coll)
 	{
 		GameObject other = coll.gameObject;
@@ -95,6 +97,10 @@ public class Enemy : MonoBehaviour {
         {
             Debug.Log("Enemy hit by boomerang");
 			Damage (boom_damage);
+            if (gameObject.tag == "stalfo")
+            {
+                return;
+            }
         }
         else if(other.GetComponent<friendly_Fireball>() != null)
         {

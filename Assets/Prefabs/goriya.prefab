@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114000035736915110}
   m_Layer: 8
   m_Name: goriya
-  m_TagString: Untagged
+  m_TagString: stalfo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1266453492643184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39, y: 4, z: 0}
+  m_LocalPosition: {x: 55.264618, y: 39.286766, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,6 +120,7 @@ MonoBehaviour:
   arrow_damage: 1
   bomb_damage: 1
   boom_damage: 0
+  fireball_damage: 1
   knockback_force: 15
   movement_delay_on_hit: 0.5
   hurt_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}

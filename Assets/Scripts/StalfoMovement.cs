@@ -7,6 +7,7 @@ public class StalfoMovement : EnemyController {
 	Rigidbody rb;
 	public float move_speed = 0.5f;
 	public float change_dir_time = 1f;
+    public bool isStunned = false;
 
 	Vector3 current_dir;
 	int layer_mask = ~((1 << 8) | (1 << 9));
@@ -30,11 +31,19 @@ public class StalfoMovement : EnemyController {
 	}
 
 	void FixedUpdate(){
-		if (Physics.Raycast (transform.position, current_dir, 0.51f, layer_mask)) {
-			StopCoroutine (co);
-			co = StartCoroutine (Move ());
-		}
-		rb.velocity = current_dir * move_speed;
+        if (!isStunned)
+        {
+            if (Physics.Raycast(transform.position, current_dir, 0.51f, layer_mask))
+            {
+                StopCoroutine(co);
+                co = StartCoroutine(Move());
+            }
+            rb.velocity = current_dir * move_speed;
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
 	}
 
 	IEnumerator Move()
@@ -58,4 +67,25 @@ public class StalfoMovement : EnemyController {
 		yield return new WaitForSeconds (change_dir_time);
 		co = StartCoroutine (Move ());
 	}
+
+    void OnTriggerEnter(Collider coll)
+    {
+        GameObject other = coll.gameObject;
+        if (other.GetComponent<Boomerang>() != null)
+        {
+            isStunned = true;
+            Vector3 temp = rb.velocity;
+
+            rb.velocity = Vector3.zero;
+
+            StartCoroutine(waitForMe());
+            rb.velocity = temp;
+
+        }
+    }
+    IEnumerator waitForMe()
+    {
+        yield return new WaitForSeconds(3f);
+        isStunned = false;
+    }
 }
