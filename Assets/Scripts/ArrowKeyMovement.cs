@@ -8,6 +8,8 @@ public class ArrowKeyMovement : MonoBehaviour {
 	// Inspector fields
 	public float movement_speed = 4;
 	bool disabled = false;
+	Vector3 player_original_pos;
+	Vector3 camera_original_pos;
 
 	Rigidbody rb;
     Vector3 temPosYChange;
@@ -32,9 +34,16 @@ public class ArrowKeyMovement : MonoBehaviour {
 		}
 	}
 
+	public void Reset(){
+		transform.position = player_original_pos;
+		Camera.main.transform.position = camera_original_pos;
+	}
+
     // Use this for initialization
     void Start ()
 	{
+		player_original_pos = transform.position;
+		camera_original_pos = Camera.main.transform.position;
 		// Store a reference to the Rigidbody component on this game object.
 		// This prevents us from calling GetComponent() every frame, which saves performance
 		rb = GetComponent<Rigidbody> ();

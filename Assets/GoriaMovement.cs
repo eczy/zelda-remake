@@ -44,8 +44,8 @@ public class GoriaMovement : EnemyController {
 	}
 
 	void FixedUpdate(){
-                if(isStunned)
-                        return;
+        if(isStunned)
+			return;
 		if (Physics.Raycast (transform.position, current_dir, 0.51f, layer_mask)) {
 			StopCoroutine (co);
 			co = StartCoroutine (Move ());
