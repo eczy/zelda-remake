@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4065216768065990}
   - component: {fileID: 65971394874429854}
-  - component: {fileID: 114977978360675852}
+  - component: {fileID: 114560611558910880}
   m_Layer: 0
   m_Name: hitbox
   m_TagString: Untagged
@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1955325984195268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59, y: 5.5, z: 0}
+  m_LocalPosition: {x: 75, y: 49.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4113842867005646}
@@ -175,7 +175,39 @@ MonoBehaviour:
   shot_spread: 0.5
   player: {fileID: 0}
   death_door: {fileID: 0}
-  player_present: 0
+  player_present: 1
+--- !u!114 &114560611558910880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1428069471004460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9874bb4dcc2c41b59505692a4aa044a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  health: 1
+  flash_duration: 0.5
+  sword_damage: 0
+  arrow_damage: 0
+  bomb_damage: 0
+  boom_damage: 0
+  fireball_damage: 1
+  knockback_force: 0
+  movement_delay_on_hit: 0.5
+  hurt_sound: {fileID: 0}
+  die_sound: {fileID: 0}
+  controller: {fileID: 0}
+  carried_object: {fileID: 0}
+  heart_drop: {fileID: 0}
+  bomb_drop: {fileID: 0}
+  rupee_drop: {fileID: 0}
+  drop_prob: 0.5
+  heart_drop_prob: 0.35
+  bomb_drop_prob: 0.3
+  rupee_drop_prob: 0.35
 --- !u!114 &114907566717737452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,6 +237,7 @@ MonoBehaviour:
   arrow_damage: 1
   bomb_damage: 2
   boom_damage: 0
+  fireball_damage: 1
   knockback_force: 0
   movement_delay_on_hit: 0
   hurt_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}
@@ -215,37 +248,6 @@ MonoBehaviour:
   bomb_drop: {fileID: 0}
   rupee_drop: {fileID: 0}
   drop_prob: 0
-  heart_drop_prob: 0.35
-  bomb_drop_prob: 0.3
-  rupee_drop_prob: 0.35
---- !u!114 &114977978360675852
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1428069471004460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9874bb4dcc2c41b59505692a4aa044a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  health: 1
-  flash_duration: 0
-  sword_damage: 0
-  arrow_damage: 0
-  bomb_damage: 0
-  boom_damage: 0
-  knockback_force: 0
-  movement_delay_on_hit: 0
-  hurt_sound: {fileID: 0}
-  die_sound: {fileID: 0}
-  controller: {fileID: 0}
-  carried_object: {fileID: 0}
-  heart_drop: {fileID: 0}
-  bomb_drop: {fileID: 0}
-  rupee_drop: {fileID: 0}
-  drop_prob: 0.5
   heart_drop_prob: 0.35
   bomb_drop_prob: 0.3
   rupee_drop_prob: 0.35
@@ -338,7 +340,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 549314f34eede0a4e99129738ea22fcd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
