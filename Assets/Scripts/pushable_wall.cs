@@ -13,6 +13,7 @@ public class pushable_wall : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
+		rb.isKinematic = true;
     }
 
     private void OnCollisionStay(Collision coll)
@@ -34,7 +35,7 @@ public class pushable_wall : MonoBehaviour {
     }
 
 	IEnumerator Move(Vector3 dir){
-
+		rb.isKinematic = false;
 		moving = true;
 		float t = 0;
 		Vector3 start = rb.position;

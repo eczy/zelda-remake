@@ -59,7 +59,13 @@ public class Health : MonoBehaviour {
 		
 		co_recover = StartCoroutine (Recover());
 		co_pause_controls = StartCoroutine (PauseControls());
-		StartCoroutine(Knockback(coll.contacts [0].normal));
+		Vector3 knockback_vec = coll.contacts [0].normal;
+		if (Mathf.Abs (knockback_vec.x) > Mathf.Abs (knockback_vec.y)) {
+			knockback_vec = new Vector3 (knockback_vec.x, 0, 0).normalized;
+		} else {
+			knockback_vec = new Vector3 (0, knockback_vec.y, 0).normalized;
+		}
+		StartCoroutine(Knockback(knockback_vec));
 	}
 
 	void OnCollisionStay(Collision coll){

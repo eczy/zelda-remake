@@ -106,6 +106,7 @@ MonoBehaviour:
   arrow_damage: 0
   bomb_damage: 0
   boom_damage: 0
+  fireball_damage: 1
   knockback_force: 0
   movement_delay_on_hit: 0
   hurt_sound: {fileID: 0}
@@ -119,6 +120,7 @@ MonoBehaviour:
   heart_drop_prob: 0.35
   bomb_drop_prob: 0.3
   rupee_drop_prob: 0.35
+  isProjectile: 1
 --- !u!135 &135583960306199926
 SphereCollider:
   m_ObjectHideFlags: 1

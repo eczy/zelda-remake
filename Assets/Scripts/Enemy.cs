@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour {
 	public float heart_drop_prob = 0.35f;
 	public float bomb_drop_prob = 0.30f;
 	public float rupee_drop_prob = 0.35f;
+	public bool isProjectile = false;
 	FlashWhenDamaged flash;
 	Rigidbody rb;
 
@@ -85,7 +86,7 @@ public class Enemy : MonoBehaviour {
 			Damage (sword_damage);
 
 			// Destroy if it is a magic sword beam
-			if (other.GetComponent<Rigidbody> () != null)
+			if (other.GetComponent<Rigidbody> () != null && isProjectile == false)
 				Destroy (other);
 		} else if (other.GetComponent<Bomb> () != null) {
 			Debug.Log ("Enemy hit by bomb");

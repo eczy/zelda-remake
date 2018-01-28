@@ -120,6 +120,7 @@ MonoBehaviour:
   arrow_damage: 1
   bomb_damage: 1
   boom_damage: 0
+  fireball_damage: 1
   knockback_force: 15
   movement_delay_on_hit: 0.5
   hurt_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}
@@ -133,6 +134,7 @@ MonoBehaviour:
   heart_drop_prob: 0.35
   bomb_drop_prob: 0.3
   rupee_drop_prob: 0.35
+  isProjectile: 0
 --- !u!114 &114772284626936106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,7 +152,7 @@ MonoBehaviour:
   fire_delay: 1
   current_dir: {x: 0, y: 0, z: 0}
   boomerang: {fileID: 54756837029246220, guid: 77182e88300bece49a558adbd84daf88, type: 2}
-  boom_spawn_distance: 1
+  boom_spawn_distance: 0.25
   throw_speed: 10
   return_speed: 0.1
 --- !u!114 &114856291046506400

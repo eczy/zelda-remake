@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135762785981034494}
   - component: {fileID: 114661892590033090}
   - component: {fileID: 114522193285456474}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,6 +91,7 @@ MonoBehaviour:
   heart_drop_prob: 0.35
   bomb_drop_prob: 0.3
   rupee_drop_prob: 0.35
+  isProjectile: 1
 --- !u!114 &114661892590033090
 MonoBehaviour:
   m_ObjectHideFlags: 1

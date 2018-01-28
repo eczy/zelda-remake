@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114805228671764212}
   - component: {fileID: 54366504029462532}
   - component: {fileID: 135849568279256312}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: gel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,7 @@ MonoBehaviour:
   heart_drop_prob: 0.35
   bomb_drop_prob: 0.3
   rupee_drop_prob: 0.35
+  isProjectile: 0
 --- !u!114 &114805228671764212
 MonoBehaviour:
   m_ObjectHideFlags: 1
