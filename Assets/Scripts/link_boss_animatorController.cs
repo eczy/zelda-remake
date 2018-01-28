@@ -37,7 +37,7 @@ public class link_boss_animatorController : MonoBehaviour {
             animator.SetBool("isLeft", false);
         }
 
-        if (!isLeft && horizontal_input < 0 || isLeft && horizontal_input > 0)
+        if (!isLeft && horizontal_input > 0 || isLeft && horizontal_input < 0)
         {
             isLeft = !isLeft;
 

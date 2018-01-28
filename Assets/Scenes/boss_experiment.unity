@@ -3752,16 +3752,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9006f96ce7c7cb49a2b2895bcd5efa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_reload_time: 3
-  min_reload_time: 0.5
+  reload_time: 1
   power_up_time: 0.5
-  delta_x: 0.1
-  change_dir_delay: 0.5
   fireball_spawnpoint: {fileID: 0}
   fireball: {fileID: 0}
   fireball_speed: 2
-  shot_spread: 0.25
-  enemy: {fileID: 0}
 --- !u!95 &590147670
 Animator:
   serializedVersion: 3
@@ -13938,6 +13933,29 @@ Prefab:
     - target: {fileID: 212613778012473396, guid: 44cb2a3798f91d44d8f592ce9c09c641,
         type: 2}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212613778012473396, guid: 44cb2a3798f91d44d8f592ce9c09c641,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217846194047758, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217846194047758, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.555
+      objectReference: {fileID: 0}
+    - target: {fileID: 114015571800650078, guid: 44cb2a3798f91d44d8f592ce9c09c641,
+        type: 2}
+      propertyPath: power_up_time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114015571800650078, guid: 44cb2a3798f91d44d8f592ce9c09c641,
+        type: 2}
+      propertyPath: max_reload_time
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
