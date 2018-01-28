@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 95770062008468568}
   - component: {fileID: 114971818206434530}
   - component: {fileID: 114933706462116758}
+  - component: {fileID: 114334322849421092}
+  - component: {fileID: 114052137862635598}
   m_Layer: 0
   m_Name: link_ride_boss
   m_TagString: Untagged
@@ -90,6 +92,26 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114052137862635598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974140998628174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdeb5cb229b08041bd033e1f428a17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 6
+  max_health: 6
+  recovery_time: 0.5
+  control_disable_time: 0.25
+  knockback_force: 10
+  death_panel: {fileID: 0}
+  hurt_sound: {fileID: 8300000, guid: f7cabc9628d8f3143b3bdc200a109e58, type: 3}
+  die_sound: {fileID: 8300000, guid: 5e73b8dff2dace64f9da77efae07bdd6, type: 3}
+  low_health_sound: {fileID: 0}
 --- !u!114 &114176820257093566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +125,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement_speed: 2
   linkDirection: 2
+--- !u!114 &114334322849421092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974140998628174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11bd4703ce6c41e8b1e4b74d35f9205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114933706462116758
 MonoBehaviour:
   m_ObjectHideFlags: 1
