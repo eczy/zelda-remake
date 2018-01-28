@@ -8,16 +8,17 @@ public class Aquamentus_friendly : EnemyController {
 	public float power_up_time = 0f;
 	public Transform fireball_spawnpoint;
 	public Rigidbody fireball;
-	public float fireball_speed = 2f;
+	public float fireball_speed = 4f;
 
 	bool canshoot = true;
 	bool forward = true;
+    bool xEnabled = true;
 	Animator anim;
 	Rigidbody rb;
 
 	Vector3[] shootdirs = {
-		new Vector3 (3, 1, 0).normalized,
-		new Vector3 (3, -1, 0).normalized,
+		new Vector3 (4, 1, 0).normalized,
+		new Vector3 (4, -1, 0).normalized,
 		new Vector3 (1, 0, 0)
 	};
 
@@ -50,14 +51,19 @@ public class Aquamentus_friendly : EnemyController {
             }
         }
 
-        if (canshoot && Input.GetKeyDown("z"))
-			StartCoroutine (Shoot ());
+        if (canshoot && Input.GetKeyDown("z") && xEnabled)
+        {
+            StartCoroutine(Shoot());
+            xEnabled = true;
+        }
+			
 	}
 
 
 	IEnumerator Shoot (){
 		canshoot = false;
-		anim.SetBool ("firing", true);
+        xEnabled = false;
+        anim.SetBool ("firing", true);
 
 		fireballs [0] = Instantiate (fireball, fireball_spawnpoint.position, transform.rotation);
 		fireballs [1] = Instantiate (fireball, fireball_spawnpoint.position, transform.rotation);
@@ -72,6 +78,8 @@ public class Aquamentus_friendly : EnemyController {
 		anim.SetBool ("firing", false);
 		yield return new WaitForSeconds (reload_time);
 		canshoot = true;
-	}
+        
+
+    }
 
 }
