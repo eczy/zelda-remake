@@ -13,6 +13,11 @@ public class CameraRoomFollow : MonoBehaviour {
 	GameObject main_camera;
 	BoxCollider player_bc;
 
+	swingSword sword;
+	BombUse bomb;
+	UseBoomerang boom;
+	Bow bow;
+
 
 	void Start ()
 	{
@@ -20,6 +25,11 @@ public class CameraRoomFollow : MonoBehaviour {
 		player_transform = GetComponent<Transform> ();
 		main_camera = GameObject.FindGameObjectWithTag ("MainCamera");
 		player_bc = GetComponent<BoxCollider> ();
+
+		sword = GetComponent<swingSword> ();
+		bomb = GetComponent<BombUse> ();
+		boom = GetComponent<UseBoomerang> ();
+		bow = GetComponent<Bow> ();
 	}
 
 	void OnTriggerEnter (Collider coll)
@@ -37,6 +47,10 @@ public class CameraRoomFollow : MonoBehaviour {
 	IEnumerator Transition(Transform camera_transform, Vector3 end_position, float duration, Vector3 p_delta)
 	{
 		controller.DisableControls ();
+		sword.enabled = false;
+		bow.enabled = false;
+		bomb.enabled = false;
+		boom.enabled = false;
 		player_bc.enabled = false;
 		Vector3 cam_start_position = camera_transform.position;
 		Vector3 player_start_position = player_transform.position;
@@ -51,6 +65,10 @@ public class CameraRoomFollow : MonoBehaviour {
 		}
 		transform.position = player_end_position;
 		player_bc.enabled = true;
+		sword.enabled = true;
+		bow.enabled = true;
+		bomb.enabled = true;
+		boom.enabled = true;
 		controller.EnableControls ();
 	}
 }

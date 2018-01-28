@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max_dist_x: 6
   max_dist_y: 3
-  attack_speed: 5
+  attack_speed: 6
   recover_speed: 2
   up: 1
   down: 0

@@ -17,6 +17,7 @@ public class Aquamentus : EnemyController {
 	public float shot_spread = 0.25f;
 	public Transform player;
 	public Door death_door;
+	public bool player_present = false;
 
 	bool canshoot = true;
 	bool forward = true;
@@ -47,6 +48,9 @@ public class Aquamentus : EnemyController {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!player_present)
+			return;
+		
 		if (canshoot)
 			StartCoroutine (Shoot ());
 

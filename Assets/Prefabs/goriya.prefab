@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  health: 5
+  health: 3
   flash_duration: 0.5
   sword_damage: 1
   arrow_damage: 1

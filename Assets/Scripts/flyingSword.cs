@@ -38,7 +38,7 @@ public class flyingSword : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (sword.usage_key) && !reloading && (playerHealth.GetHealth()==playerHealth.max_health)) {
+		if (Input.GetKeyDown (sword.usage_key) && sword.enabled && !reloading && (playerHealth.GetHealth()==playerHealth.max_health)) {
 			AudioSource.PlayClipAtPoint (use_sound, Camera.main.transform.position);
 			StartCoroutine(Shoot ());
 		}

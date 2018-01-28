@@ -19,7 +19,7 @@ public class DoorUnlocker : MonoBehaviour {
 		GameObject object_collided_with = coll.gameObject;
 		Door door = object_collided_with.GetComponent<Door> ();
 
-		if (door == null || door.locked == false)
+		if (door == null || door.locked == false || door.isUnlockable == false)
 			return;
 
 		Debug.Log ("Hit a door");

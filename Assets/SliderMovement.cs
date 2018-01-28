@@ -45,7 +45,7 @@ public class SliderMovement : MonoBehaviour {
 	IEnumerator Activate(Vector3 direction){
 		can_attack = false;
 		if (Mathf.Abs(direction.x) > 0) {
-			while (Mathf.Abs (init_pos.x - rb.position.x) < max_dist_x) {
+			while (Mathf.Abs (init_pos.x - rb.position.x) < max_dist_x-0.5) {
 				rb.position += direction * attack_speed * Time.deltaTime;
 				yield return null;
 			}
@@ -54,7 +54,7 @@ public class SliderMovement : MonoBehaviour {
 				yield return null;
 			}
 		} else {
-			while (Mathf.Abs (init_pos.y - rb.position.y) < max_dist_y) {
+			while (Mathf.Abs (init_pos.y - rb.position.y) < max_dist_y-0.5) {
 				rb.position += direction * attack_speed * Time.deltaTime;
 				yield return null;
 			}

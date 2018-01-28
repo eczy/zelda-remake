@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9874bb4dcc2c41b59505692a4aa044a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.5
   health: 2
   flash_duration: 0.5
   sword_damage: 1

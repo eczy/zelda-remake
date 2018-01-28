@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9874bb4dcc2c41b59505692a4aa044a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.5
   health: 1
   flash_duration: 0
   sword_damage: 0
@@ -112,6 +112,13 @@ MonoBehaviour:
   die_sound: {fileID: 0}
   controller: {fileID: 0}
   carried_object: {fileID: 0}
+  heart_drop: {fileID: 0}
+  bomb_drop: {fileID: 0}
+  rupee_drop: {fileID: 0}
+  drop_prob: 0.5
+  heart_drop_prob: 0.35
+  bomb_drop_prob: 0.3
+  rupee_drop_prob: 0.35
 --- !u!135 &135583960306199926
 SphereCollider:
   m_ObjectHideFlags: 1

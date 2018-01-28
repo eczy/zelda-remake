@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class KeeseMovement : MonoBehaviour {
 
-	public float rest_time;
+	public float min_rest_time;
+	public float max_rest_time;
 	public float fly_time;
 	public float peak_speed;
 	public float accel_time;
@@ -104,7 +105,7 @@ public class KeeseMovement : MonoBehaviour {
 		anim.speed = 0f;
 		rb.isKinematic = true;
 
-		yield return new WaitForSeconds (rest_time);
+		yield return new WaitForSeconds (Random.Range(min_rest_time, max_rest_time));
 		rb.isKinematic = false;
 		can_fly = true;
 	}

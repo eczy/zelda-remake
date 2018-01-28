@@ -172,9 +172,10 @@ MonoBehaviour:
   rightlim: 1
   fireball: {fileID: 54961139893236778, guid: c17211de80d6aa34c931fd275f107aba, type: 2}
   fireball_speed: 4
-  shot_spread: 0.25
+  shot_spread: 0.5
   player: {fileID: 0}
   death_door: {fileID: 0}
+  player_present: 0
 --- !u!114 &114907566717737452
 MonoBehaviour:
   m_ObjectHideFlags: 1
