@@ -9,11 +9,13 @@ public class link_ride_boss : MonoBehaviour {
     GameObject link_with_boss;
     
 
-	// Use this for initialization
-	void Awake () {
+
+    // Use this for initialization
+    void Awake () {
         idle_aquamentus = GameObject.Find("mountable_aquamentus");
         player = GameObject.Find("Player");
         link_with_boss = GameObject.Find("link_ride_boss");
+        
     }
 
     private void Start()
@@ -31,6 +33,9 @@ public class link_ride_boss : MonoBehaviour {
             idle_aquamentus.SetActive(false);
             player.SetActive(false);
             link_with_boss.SetActive(true);
+            
         }
     }
+
+    
 }

@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 54244285092053112}
   - component: {fileID: 65677427819724358}
   - component: {fileID: 114176820257093566}
+  - component: {fileID: 95770062008468568}
+  - component: {fileID: 114971818206434530}
+  - component: {fileID: 114933706462116758}
   m_Layer: 0
   m_Name: link_ride_boss
   m_TagString: Untagged
@@ -37,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974140998628174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.58, y: 3.12, z: 0}
+  m_LocalPosition: {x: 12.52, y: 4.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,6 +73,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4381962, y: 1.2747617, z: 0.2}
   m_Center: {x: -0.0054941177, y: -0.36261916, z: 0}
+--- !u!95 &95770062008468568
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974140998628174}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8572e377518086a478c6cd64677180df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114176820257093566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,6 +103,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement_speed: 2
   linkDirection: 2
+--- !u!114 &114933706462116758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974140998628174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8584d037dddc98438969b0f10845bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeft: 0
+--- !u!114 &114971818206434530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974140998628174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9865a9b91abded4f871510b1863c229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212613778012473396
 SpriteRenderer:
   m_ObjectHideFlags: 1

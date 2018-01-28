@@ -2293,51 +2293,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &283452564 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1974140998628174, guid: 44cb2a3798f91d44d8f592ce9c09c641,
-    type: 2}
-  m_PrefabInternal: {fileID: 1956716773}
---- !u!95 &283452565
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 283452564}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8572e377518086a478c6cd64677180df, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &283452566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 283452564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9865a9b91abded4f871510b1863c229, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &283452571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 283452564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8584d037dddc98438969b0f10845bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLeft: 0
 --- !u!1 &338197729
 GameObject:
   m_ObjectHideFlags: 0
@@ -14001,15 +13956,6 @@ Prefab:
     - target: {fileID: 4751234006951980, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 212613778012473396, guid: 44cb2a3798f91d44d8f592ce9c09c641,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974140998628174, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}

@@ -8,11 +8,13 @@ public class getoff_boss : MonoBehaviour {
     GameObject player;
     GameObject link_with_boss;
 
+
     void Awake()
     {
         idle_aquamentus = GameObject.Find("mountable_aquamentus");
         player = GameObject.Find("Player");
         link_with_boss = GameObject.Find("link_ride_boss");
+       
     }
 
     // Use this for initialization
@@ -28,6 +30,11 @@ public class getoff_boss : MonoBehaviour {
         {
             Vector3 link_with_boss_position = link_with_boss.GetComponent<Transform>().position;
             Vector3 link_position = link_with_boss_position + new Vector3(-1.5f,0,0);
+            Collider[] hitcolliders = Physics.OverlapSphere(link_position, 0.3f);
+            if (hitcolliders.Length > 0)
+            {
+                return;
+            }
             Vector3 dragonScale = link_with_boss.GetComponent<Transform>().localScale;
             dragonScale.x *= -1;
             idle_aquamentus.GetComponent<Transform>().position = link_with_boss_position;
@@ -36,6 +43,9 @@ public class getoff_boss : MonoBehaviour {
             link_with_boss.SetActive(false);
             idle_aquamentus.SetActive(true);
             player.SetActive(true);
+            
         }
 	}
+
+    
 }
