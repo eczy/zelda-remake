@@ -14,6 +14,7 @@ public class GoriaMovement : EnemyController {
 	public float boom_spawn_distance = 1f;
 	public float throw_speed = 3f;
 	public float return_speed = 1f;
+        public bool isStunned = false;
 
 	bool can_throw = true;
 	int layer_mask = ~((1 << 8) | (1 << 9));
@@ -43,6 +44,8 @@ public class GoriaMovement : EnemyController {
 	}
 
 	void FixedUpdate(){
+                if(isStunned)
+                        return;
 		if (Physics.Raycast (transform.position, current_dir, 0.51f, layer_mask)) {
 			StopCoroutine (co);
 			co = StartCoroutine (Move ());

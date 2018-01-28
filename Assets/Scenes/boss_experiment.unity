@@ -13302,11 +13302,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!4 &1879306593 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4550107857668924, guid: 0a031c22a9a354300b3983be2eaf0c59,
-    type: 2}
-  m_PrefabInternal: {fileID: 1703318368}
 --- !u!1 &1887539648
 GameObject:
   m_ObjectHideFlags: 0
@@ -13924,39 +13919,6 @@ Prefab:
     - target: {fileID: 4751234006951980, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114015571800650078, guid: 44cb2a3798f91d44d8f592ce9c09c641,
-        type: 2}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 1879306593}
-    - target: {fileID: 212613778012473396, guid: 44cb2a3798f91d44d8f592ce9c09c641,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212613778012473396, guid: 44cb2a3798f91d44d8f592ce9c09c641,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217846194047758, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217846194047758, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.555
-      objectReference: {fileID: 0}
-    - target: {fileID: 114015571800650078, guid: 44cb2a3798f91d44d8f592ce9c09c641,
-        type: 2}
-      propertyPath: power_up_time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114015571800650078, guid: 44cb2a3798f91d44d8f592ce9c09c641,
-        type: 2}
-      propertyPath: max_reload_time
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}

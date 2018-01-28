@@ -36,7 +36,7 @@ public class getoff_boss : MonoBehaviour {
                 return;
             }
             Vector3 dragonScale = link_with_boss.GetComponent<Transform>().localScale;
-            dragonScale.x *= -1;
+            //dragonScale.x *= -1;
             idle_aquamentus.GetComponent<Transform>().position = link_with_boss_position;
             idle_aquamentus.GetComponent<Transform>().localScale = dragonScale;
             player.GetComponent<Transform>().position = link_position;

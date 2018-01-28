@@ -59,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1084179353880062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.045, y: 0.555, z: 0}
+  m_LocalPosition: {x: 0.82, y: 0.555, z: 0}
   m_LocalScale: {x: 0.6209545, y: 0.6121397, z: 1}
   m_Children: []
   m_Father: {fileID: 4751234006951980}
@@ -134,16 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9006f96ce7c7cb49a2b2895bcd5efa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_reload_time: 3
-  min_reload_time: 0.5
-  power_up_time: 0.5
-  delta_x: 0.1
-  change_dir_delay: 0.5
+  reload_time: 1
+  power_up_time: 0
   fireball_spawnpoint: {fileID: 4217846194047758}
   fireball: {fileID: 54961139893236778, guid: 8b6650be7ce5b6a43a37d87ae6274185, type: 2}
   fireball_speed: 2
-  shot_spread: 0.25
-  enemy: {fileID: 0}
 --- !u!114 &114052137862635598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,7 +242,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3ded3d1ee7cdc294f99e8a52a733982e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.625, y: 2}
