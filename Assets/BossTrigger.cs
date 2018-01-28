@@ -8,7 +8,8 @@ public class BossTrigger : MonoBehaviour {
 	public float activation_delay = 0.5f;
 
 	void OnTriggerEnter(Collider coll){
-		if (coll.GetComponent<ArrowKeyMovement> ()) {
+		if (coll.GetComponent<ArrowKeyMovement> () != null) {
+			Debug.Log ("toggling boss");
 			StartCoroutine (Trigger ());
 		}
 	}

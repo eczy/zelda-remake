@@ -6,11 +6,12 @@ public class WallmasterMovement : EnemyController {
 
 	Rigidbody rb;
 	public float move_speed = 0.5f;
-	public float change_dir_time = 1f;
+	public Transform[] move_points;
+	public WallmasterController controller;
 
+	bool holding_player = false;
+	Rigidbody player;
 	Vector3 current_dir;
-	int layer_mask = ~((1 << 8) | (1 << 9) | (1<<10) );
-	Coroutine co;
 
 	Vector3[] directions = {
 		new Vector3 (1, 0, 0),
@@ -20,61 +21,47 @@ public class WallmasterMovement : EnemyController {
 	};
 
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
 		rb = GetComponent<Rigidbody> ();
-		co = StartCoroutine (Move ());
-	}
 
-	void Update (){
-		Debug.DrawLine (transform.position, transform.position + current_dir * 1f);
-	}
-
-	void FixedUpdate(){
-		if (Physics.Raycast (transform.position, current_dir, 0.51f, layer_mask)) {
-			StopCoroutine (co);
-			co = StartCoroutine (Move ());
-		}
-		rb.velocity = current_dir * move_speed;
-	}
-
-	IEnumerator Move()
-	{
-		Vector3 direction;
-		int iter = 0;
-		while (true) {
-			int i = Random.Range (0, 4);
-			direction = directions [i];
-
-			if (Physics.Raycast (transform.position, direction, 0.51f, layer_mask) == false) {
-				current_dir = direction;
-				break;
+		for (int i = 0; i < move_points.Length; ++i) {
+			while (Mathf.Abs (Vector3.Magnitude (rb.position - move_points [i].position)) > 0.1) {
+				rb.position += (move_points [i].position - rb.position).normalized * Time.deltaTime * move_speed;
+				yield return null;
 			}
-
-			// Prevent infinite looping
-			iter++;
-			if (iter > 100)
-				break;
+			rb.position = move_points [i].position;
 		}
-		yield return new WaitForSeconds (change_dir_time);
-		co = StartCoroutine (Move ());
+
+		if (holding_player) {
+			player.GetComponent<ArrowKeyMovement> ().Reset ();
+			player.GetComponent<ArrowKeyMovement> ().enabled = true;
+			player.GetComponent<Collider> ().enabled = true;
+		}
+		Destroy (gameObject);
 	}
 
-	void OnTriggerExit(Collider coll){
-		if (coll.gameObject.GetComponent<WallmasterController> () != null) {
-			coll.GetComponent<WallmasterController> ().num_wallmasters--;
-			Destroy (gameObject);
-		}
+	void OnDestroy(){
+		controller.WallmasterDied ();
 	}
+
 
 	void OnCollisionEnter(Collision coll)
 	{
-		
 		if (coll.collider.gameObject.GetComponent<ArrowKeyMovement> () != null) {
-			coll.collider.transform.parent = transform;
-			coll.collider.GetComponent<ArrowKeyMovement> ().enabled = false;
+			player = coll.collider.GetComponent<Rigidbody> ();
+			player.transform.position = transform.position;
 			GetComponent<SpriteRenderer> ().sortingOrder = 3;
-			coll.collider.transform.position = transform.position;
-			StopCoroutine (co);
+			holding_player = true;
+			StartCoroutine (CapturePlayer ());
+		}
+	}
+
+	IEnumerator CapturePlayer(){
+		while (true) {
+			player.GetComponent<ArrowKeyMovement> ().enabled = false;
+			player.GetComponent<Collider> ().enabled = false;
+			player.position = rb.position;
+			yield return null;
 		}
 	}
 }

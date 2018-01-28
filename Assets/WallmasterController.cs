@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class WallmasterController : MonoBehaviour {
 
-	public Transform[] spawn_points;
-	public Rigidbody wallmaster;
-	public int max_num_wallmasters = 1;
-	public int num_wallmasters = 0;
+	public Transform spawn_point;
+	public Transform[] movement_points;
+	public WallmasterMovement wallmaster;
+	public float spawn_delay = 2f;
+	bool canspawn = true;
+	int max_wallmasters = 2;
+	int num_wallmasters = 0;
 
-	// Use this for initialization
-	void Start () {
+	void OnTriggerStay(Collider coll){
+		if (num_wallmasters >= max_wallmasters || !canspawn)
+			return;
 		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (num_wallmasters < max_num_wallmasters) {
-			SpawnNewWallmaster ();
-		}
+		if (coll.GetComponent<ArrowKeyMovement> () == null)
+			return;
+		
+		WallmasterMovement wm = Instantiate (wallmaster, spawn_point.position, spawn_point.rotation);
+		wm.move_points = movement_points;
+		wm.controller = this;
+		++num_wallmasters;
+		StartCoroutine (Cooldown ());
 	}
 
-	void SpawnNewWallmaster(){
-		int r = Random.Range (0, spawn_points.Length);
-		Instantiate (wallmaster, spawn_points [r].position, spawn_points [r].rotation);
-		num_wallmasters++;
+	IEnumerator Cooldown(){
+		canspawn = false;
+		yield return new WaitForSeconds (spawn_delay);
+		canspawn = true;
+	}
+
+	public void WallmasterDied(){
+		num_wallmasters--;
 	}
 }
