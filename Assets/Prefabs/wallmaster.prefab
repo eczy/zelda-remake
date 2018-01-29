@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  health: 5
+  health: 2
   flash_duration: 0.5
   sword_damage: 1
   arrow_damage: 1
@@ -138,6 +138,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  controller: {fileID: 0}
 --- !u!135 &135423076272896542
 SphereCollider:
   m_ObjectHideFlags: 1

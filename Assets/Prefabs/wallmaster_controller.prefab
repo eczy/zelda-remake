@@ -191,7 +191,8 @@ MonoBehaviour:
   - {fileID: 4719659705350328}
   wallmaster: {fileID: 114977075294632576, guid: ab960219331d92a48abfedf9a0efc31e,
     type: 2}
-  spawn_delay: 2
+  spawn_delay: 3
+  max_wallmasters: 2
 --- !u!212 &212662190553390970
 SpriteRenderer:
   m_ObjectHideFlags: 1

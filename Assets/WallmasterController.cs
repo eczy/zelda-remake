@@ -7,7 +7,7 @@ public class WallmasterController : MonoBehaviour {
 	public Transform spawn_point;
 	public Transform[] movement_points;
 	public WallmasterMovement wallmaster;
-	public float spawn_delay = 2f;
+	public float spawn_delay = 3f;
 	bool canspawn = true;
 	public int max_wallmasters = 2;
 	int num_wallmasters = 0;
