@@ -138,6 +138,10 @@ public class Health_Boss : MonoBehaviour {
 		StopCoroutine (co_recover);
 		StopCoroutine (co_pause_controls);
 		controller.DisableControls ();
+
+		death_panel.SetActive (true);
+		gameObject.SetActive (false);
+		return;
         
 		/*
         Vector3 link_position = link_with_boss.GetComponent<Transform>().position;
@@ -146,14 +150,14 @@ public class Health_Boss : MonoBehaviour {
         player.SetActive(true);
         */
 
-		Vector3 link_with_boss_position = link_with_boss.GetComponent<Transform>().position;
-		Vector3 link_position = link_with_boss_position + new Vector3(-1.5f, 0, 0);
-		Vector3 dragonScale = link_with_boss.GetComponent<Transform>().localScale;
+		Vector3 link_with_boss_position = link_with_boss.GetComponent<Transform> ().position;
+		Vector3 link_position = link_with_boss_position + new Vector3 (-1.5f, 0, 0);
+		Vector3 dragonScale = link_with_boss.GetComponent<Transform> ().localScale;
 		//dragonScale.x *= -1;
-		idle_aquamentus.GetComponent<Transform>().position = link_with_boss_position;
-		idle_aquamentus.GetComponent<Transform>().localScale = dragonScale;
-		player.GetComponent<Transform>().position = link_position;
-		player.SetActive(true);
-		link_with_boss.SetActive(false);
-    }
+		idle_aquamentus.GetComponent<Transform> ().position = link_with_boss_position;
+		idle_aquamentus.GetComponent<Transform> ().localScale = dragonScale;
+		player.GetComponent<Transform> ().position = link_position;
+		player.SetActive (true);
+		link_with_boss.SetActive (false);
+	}
 }

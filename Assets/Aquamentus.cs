@@ -84,7 +84,8 @@ public class Aquamentus : EnemyController {
 			death_door.Unlock ();
 
 		foreach (Rigidbody f in fireballs) {
-			Destroy (f.gameObject);
+			if (f != null)
+				Destroy (f.gameObject);
 		}
 	}
 
