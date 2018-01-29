@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4989558087369276, guid: 985151e574218664897cd1af5ad91a30, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 34.32
+      value: 21.03
       objectReference: {fileID: 0}
     - target: {fileID: 4989558087369276, guid: 985151e574218664897cd1af5ad91a30, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.11
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 4989558087369276, guid: 985151e574218664897cd1af5ad91a30, type: 2}
       propertyPath: m_LocalPosition.z
@@ -206,11 +206,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4143124103992284, guid: 6f11cebaef3469e47a325bb51956cd7c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 35.14
+      value: 20.24
       objectReference: {fileID: 0}
     - target: {fileID: 4143124103992284, guid: 6f11cebaef3469e47a325bb51956cd7c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5.51
+      value: 5.17
       objectReference: {fileID: 0}
     - target: {fileID: 4143124103992284, guid: 6f11cebaef3469e47a325bb51956cd7c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -436,11 +436,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4751234006951980, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.32
+      value: 12.99
       objectReference: {fileID: 0}
     - target: {fileID: 4751234006951980, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.3
+      value: 6.85
       objectReference: {fileID: 0}
     - target: {fileID: 4751234006951980, guid: 44cb2a3798f91d44d8f592ce9c09c641, type: 2}
       propertyPath: m_LocalPosition.z
