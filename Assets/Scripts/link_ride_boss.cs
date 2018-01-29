@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class link_ride_boss : MonoBehaviour {
 
     GameObject idle_aquamentus;
     GameObject player;
     GameObject link_with_boss;
-    
 
+	public Text weapontext;
 
     // Use this for initialization
     void Awake () {
@@ -34,6 +35,7 @@ public class link_ride_boss : MonoBehaviour {
             player.SetActive(false);
             link_with_boss.SetActive(true);
             
+			weapontext.text = "Weapon A: Fireball\nWeapon B: Dismount";
         }
     }
 

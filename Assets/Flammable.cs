@@ -14,9 +14,10 @@ public class Flammable : MonoBehaviour {
 	void Start(){
 		flames = new Transform[flammable_objects.Length];
 	}
-
+		
 	void OnTriggerEnter(Collider coll){
-		if (burning)
+		Debug.Log ("triggered");
+		if (burning == true)
 			return;
 		
 		if (coll.GetComponent<Fireball> () != null || coll.GetComponent<friendly_Fireball> () != null) {
@@ -25,6 +26,7 @@ public class Flammable : MonoBehaviour {
 	}
 
 	IEnumerator Burn(){
+		Debug.Log ("Burning!");
 		burning = true;
 		for (int i = 0; i < flammable_objects.Length; i++) {
 			flames [i] = Instantiate (flame, flammable_objects [i].position, flammable_objects [i].rotation);
@@ -37,5 +39,6 @@ public class Flammable : MonoBehaviour {
 			Destroy (flammable_objects [i].gameObject);
 			Destroy (flames [i].gameObject);
 		}
+		GetComponent<Collider> ().enabled = false;
 	}
 }

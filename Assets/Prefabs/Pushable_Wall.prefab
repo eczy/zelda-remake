@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65284603274554926}
   - component: {fileID: 54608731570164382}
   - component: {fileID: 114937769327189584}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Pushable_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement_time: 1
+  jingle: {fileID: 0}
+  jingle_delay: 0
   secret_door: {fileID: 0}
+  walls: []
+  traps: []
 --- !u!212 &212617463855354472
 SpriteRenderer:
   m_ObjectHideFlags: 1

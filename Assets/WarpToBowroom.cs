@@ -6,6 +6,7 @@ public class WarpToBowroom : MonoBehaviour {
 
 	public GameObject player_warp_point;
 	public GameObject camera_warp_point;
+	public AudioClip stairssound;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,7 @@ public class WarpToBowroom : MonoBehaviour {
 		if (coll.GetComponent<Health> () != null) {
 			coll.transform.position = player_warp_point.transform.position;
 			Camera.main.transform.position = camera_warp_point.transform.position;
+			AudioSource.PlayClipAtPoint (stairssound, Camera.main.transform.position);
 		}
 	}
 }

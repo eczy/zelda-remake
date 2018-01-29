@@ -47,11 +47,19 @@ public class CameraRoomFollow : MonoBehaviour {
 	IEnumerator Transition(Transform camera_transform, Vector3 end_position, float duration, Vector3 p_delta)
 	{
 		controller.DisableControls ();
-		sword.enabled = false;
-		bow.enabled = false;
-		bomb.enabled = false;
-		boom.enabled = false;
+		if (sword != null)
+			sword.enabled = false;
+		if (bow != null)
+			bow.enabled = false;
+		if (bomb != null)
+			bomb.enabled = false;
+		if (boom != null)
+			boom.enabled = false;
 		player_bc.enabled = false;
+		foreach (Transform child in transform) {
+			if (child.GetComponent<Collider> () != null)
+				child.GetComponent<Collider> ().enabled = false;
+		}
 		Vector3 cam_start_position = camera_transform.position;
 		Vector3 player_start_position = player_transform.position;
 		Vector3 player_end_position = player_start_position + p_delta;
@@ -65,10 +73,18 @@ public class CameraRoomFollow : MonoBehaviour {
 		}
 		transform.position = player_end_position;
 		player_bc.enabled = true;
-		sword.enabled = true;
-		bow.enabled = true;
-		bomb.enabled = true;
-		boom.enabled = true;
+		if (sword != null)
+			sword.enabled = true;
+		if (bow != null)
+			bow.enabled = true;
+		if (bomb != null)
+			bomb.enabled = true;
+		if (boom != null)
+			boom.enabled = true;
+		foreach (Transform child in transform) {
+			if (child.GetComponent<Collider> () != null)
+				child.GetComponent<Collider> ().enabled = true;
+		}
 		controller.EnableControls ();
 	}
 }

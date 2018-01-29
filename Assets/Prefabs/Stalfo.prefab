@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 95020470238414016}
   - component: {fileID: 114358506177099540}
   - component: {fileID: 135759447720097778}
+  - component: {fileID: 114791595375731242}
   m_Layer: 8
   m_Name: Stalfo
   m_TagString: stalfo
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1647773875055372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 55, y: 5, z: 0}
+  m_LocalPosition: {x: 43.959984, y: 4.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,6 +103,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 2
   change_dir_time: 1
+  isStunned: 0
+--- !u!114 &114791595375731242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1647773875055372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34828c2a4d769d499c77e37d898fd0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flame: {fileID: 4205553591043946, guid: a41f6bf25d9bad945b65e1c58babd7ef, type: 2}
+  burn_time: 1
 --- !u!114 &114887359228555614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +135,7 @@ MonoBehaviour:
   arrow_damage: 1
   bomb_damage: 1
   boom_damage: 0
+  fireball_damage: 1
   knockback_force: 15
   movement_delay_on_hit: 0.25
   hurt_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}
@@ -133,6 +149,7 @@ MonoBehaviour:
   heart_drop_prob: 0.35
   bomb_drop_prob: 0.3
   rupee_drop_prob: 0.35
+  isProjectile: 0
 --- !u!135 &135759447720097778
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -178,7 +195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9444f89b769a2ef4297353839fd789ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

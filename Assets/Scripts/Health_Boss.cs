@@ -14,6 +14,7 @@ public class Health_Boss : MonoBehaviour {
 	public AudioClip hurt_sound;
 	public AudioClip die_sound;
 	public AudioClip low_health_sound;
+	public Text healthtext;
 
     GameObject link_with_boss;
     GameObject idle_aquamentus;
@@ -50,6 +51,7 @@ public class Health_Boss : MonoBehaviour {
 //			audio.enabled = true;
 //		else
 //			audio.enabled = false;
+		healthtext.text = "Aquamentus Health: " + health + "/" + max_health;
 	}
 
 	public bool FullHealthFlag(){
@@ -137,9 +139,21 @@ public class Health_Boss : MonoBehaviour {
 		StopCoroutine (co_pause_controls);
 		controller.DisableControls ();
         
+		/*
         Vector3 link_position = link_with_boss.GetComponent<Transform>().position;
         player.GetComponent<Transform>().position = link_position;
         link_with_boss.SetActive(false);
         player.SetActive(true);
+        */
+
+		Vector3 link_with_boss_position = link_with_boss.GetComponent<Transform>().position;
+		Vector3 link_position = link_with_boss_position + new Vector3(-1.5f, 0, 0);
+		Vector3 dragonScale = link_with_boss.GetComponent<Transform>().localScale;
+		//dragonScale.x *= -1;
+		idle_aquamentus.GetComponent<Transform>().position = link_with_boss_position;
+		idle_aquamentus.GetComponent<Transform>().localScale = dragonScale;
+		player.GetComponent<Transform>().position = link_position;
+		player.SetActive(true);
+		link_with_boss.SetActive(false);
     }
 }

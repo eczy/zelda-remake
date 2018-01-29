@@ -9,7 +9,7 @@ public class WallmasterController : MonoBehaviour {
 	public WallmasterMovement wallmaster;
 	public float spawn_delay = 2f;
 	bool canspawn = true;
-	int max_wallmasters = 2;
+	public int max_wallmasters = 2;
 	int num_wallmasters = 0;
 
 	void OnTriggerStay(Collider coll){

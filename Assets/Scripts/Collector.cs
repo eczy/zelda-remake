@@ -7,20 +7,16 @@ public class Collector : MonoBehaviour {
 	public AudioClip rupee_collection_sound_clip;
 	public AudioClip heart_collection_sound_clip;
 
-	Inventory inventory;
-	Health health;
+	public Inventory inventory;
+	Health health = null;
+	Health_Boss bhealth = null;
 
 	void Start ()
 	{
-		// Try to grab a reference to the inventory component on this gameobject.
-		inventory = GetComponent<Inventory> ();
-		if (inventory == null)
-			Debug.LogWarning ("WARNING: Gameobject with a collector has no inventory!");
-
 		// Try to grab a reference to the health component on this gameobject.
+		bhealth = GetComponent<Health_Boss>();
+		
 		health = GetComponent<Health> ();
-		if (health == null)
-			Debug.LogWarning ("WARNING: Gameobject with collector has no health!");
 	}
 
 	void OnTriggerEnter (Collider coll)
@@ -38,6 +34,8 @@ public class Collector : MonoBehaviour {
 		} else if (object_collided_with.tag == "heart") {
 			if (health != null)
 				health.Heal (1);
+			if (bhealth != null)
+				bhealth.Heal (1);
 			AudioSource.PlayClipAtPoint (heart_collection_sound_clip, Camera.main.transform.position);
 			Destroy (object_collided_with);
 		} else if (object_collided_with.tag == "key") {

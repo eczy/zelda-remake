@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour {
 	{
 		flash = GetComponent<FlashWhenDamaged> ();
 		rb = GetComponent<Rigidbody> ();
-		if (carried_object)
+		if (carried_object != null)
 			carried_object.GetComponent<Collider> ().enabled = false;
 	}
 
@@ -126,10 +126,12 @@ public class Enemy : MonoBehaviour {
 
 	IEnumerator Knockback(Vector3 direction, float movement_delay_on_hit)
 	{
-		controller.enabled = false;
+		if (controller != null)
+			controller.enabled = false;
 		rb.AddForce (direction * knockback_force, ForceMode.Impulse);
 		yield return new WaitForSeconds (movement_delay_on_hit);
-		controller.enabled = true;
+		if (controller != null)
+			controller.enabled = true;
 		yield return null;
 	}
 }

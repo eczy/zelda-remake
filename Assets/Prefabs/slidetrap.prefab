@@ -55,7 +55,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   arrow_damage: 0
   bomb_damage: 0
   boom_damage: 0
-  fireball_damage: 1
+  fireball_damage: 0
   knockback_force: 0
   movement_delay_on_hit: 0
   hurt_sound: {fileID: 0}
@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772553fbcb6084e4ab22f205eef3c96a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_range: 20
   attack_speed: 6
   recover_speed: 2
   partners:

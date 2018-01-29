@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114856291046506400}
   - component: {fileID: 114772284626936106}
   - component: {fileID: 114000035736915110}
+  - component: {fileID: 114981611470786002}
   m_Layer: 8
   m_Name: goriya
   m_TagString: stalfo
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9874bb4dcc2c41b59505692a4aa044a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.5
   health: 3
   flash_duration: 0.5
   sword_damage: 1
@@ -121,7 +122,7 @@ MonoBehaviour:
   bomb_damage: 1
   boom_damage: 0
   fireball_damage: 1
-  knockback_force: 15
+  knockback_force: 5
   movement_delay_on_hit: 0.5
   hurt_sound: {fileID: 8300000, guid: 87814ebb958889f47b0836da7ad0f0b8, type: 3}
   die_sound: {fileID: 8300000, guid: 18aa5d8d6d1af304d82ca34af9a9b880, type: 3}
@@ -155,6 +156,7 @@ MonoBehaviour:
   boom_spawn_distance: 0.25
   throw_speed: 10
   return_speed: 0.1
+  isStunned: 0
 --- !u!114 &114856291046506400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,6 +168,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1445d2e8273830e459b3324cd378a884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114981611470786002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266453492643184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34828c2a4d769d499c77e37d898fd0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flame: {fileID: 4205553591043946, guid: a41f6bf25d9bad945b65e1c58babd7ef, type: 2}
+  burn_time: 1
 --- !u!212 &212039973158480740
 SpriteRenderer:
   m_ObjectHideFlags: 1

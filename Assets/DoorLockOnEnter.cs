@@ -10,7 +10,7 @@ public class DoorLockOnEnter : MonoBehaviour {
 		if (coll.GetComponent<ArrowKeyMovement> () != null) {
 			Debug.Log ("Locking door behind player!!!");
 			door.Lock ();
-			Destroy (gameObject);
+			Destroy (this);
 		}
 	}
 }
