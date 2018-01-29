@@ -59,6 +59,8 @@ GameObject:
   - component: {fileID: 54195778744175128}
   - component: {fileID: 135853568440937072}
   - component: {fileID: 114907566717737452}
+  - component: {fileID: 114480214781696666}
+  - component: {fileID: 114124385423999408}
   m_Layer: 0
   m_Name: aquamentus
   m_TagString: Untagged
@@ -99,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1955325984195268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75, y: 49.5, z: 0}
+  m_LocalPosition: {x: 106.05, y: 27.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4113842867005646}
@@ -151,6 +153,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114124385423999408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955325984195268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cfa6592a1886740af3f2c310aa8a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 0}
 --- !u!114 &114150605786232480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,6 +190,18 @@ MonoBehaviour:
   player: {fileID: 0}
   death_door: {fileID: 0}
   player_present: 1
+--- !u!114 &114480214781696666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955325984195268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae76c62f21646304ba104a632de33f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 0}
 --- !u!114 &114560611558910880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,6 +234,7 @@ MonoBehaviour:
   heart_drop_prob: 0.35
   bomb_drop_prob: 0.3
   rupee_drop_prob: 0.35
+  isProjectile: 0
 --- !u!114 &114907566717737452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -251,6 +278,7 @@ MonoBehaviour:
   heart_drop_prob: 0.35
   bomb_drop_prob: 0.3
   rupee_drop_prob: 0.35
+  isProjectile: 0
 --- !u!135 &135853568440937072
 SphereCollider:
   m_ObjectHideFlags: 1
