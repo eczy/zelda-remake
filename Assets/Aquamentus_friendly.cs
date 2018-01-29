@@ -9,10 +9,14 @@ public class Aquamentus_friendly : EnemyController {
 	public Transform fireball_spawnpoint;
 	public Rigidbody fireball;
 	public float fireball_speed = 4f;
+    GameObject idle_aquamentus;
+    GameObject player;
+    GameObject link_with_boss;
 
-	bool canshoot = true;
+    bool canshoot = true;
 	bool forward = true;
     bool xEnabled = true;
+
 	Animator anim;
 	Rigidbody rb;
 
@@ -24,8 +28,16 @@ public class Aquamentus_friendly : EnemyController {
 
 	Rigidbody[] fireballs = new Rigidbody[3];
 
-	// Use this for initialization
-	void Start () {
+    void Awake()
+    {
+        idle_aquamentus = GameObject.Find("mountable_aquamentus");
+        player = GameObject.Find("Player");
+        link_with_boss = GameObject.Find("link_ride_boss");
+
+    }
+
+    // Use this for initialization
+    void Start () {
 		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody> ();
 
@@ -56,8 +68,28 @@ public class Aquamentus_friendly : EnemyController {
             StartCoroutine(Shoot());
             xEnabled = true;
         }
-			
-	}
+
+        if (Input.GetKeyDown("x") && canshoot)
+        {
+            Vector3 link_with_boss_position = link_with_boss.GetComponent<Transform>().position;
+            Vector3 link_position = link_with_boss_position + new Vector3(-1.5f, 0, 0);
+            Collider[] hitcolliders = Physics.OverlapSphere(link_position, 0.3f);
+            if (hitcolliders.Length > 0)
+            {
+                return;
+            }
+            Vector3 dragonScale = link_with_boss.GetComponent<Transform>().localScale;
+            //dragonScale.x *= -1;
+            idle_aquamentus.GetComponent<Transform>().position = link_with_boss_position;
+            idle_aquamentus.GetComponent<Transform>().localScale = dragonScale;
+            player.GetComponent<Transform>().position = link_position;
+            link_with_boss.SetActive(false);
+            idle_aquamentus.SetActive(true);
+            player.SetActive(true);
+
+        }
+
+    }
 
 
 	IEnumerator Shoot (){
