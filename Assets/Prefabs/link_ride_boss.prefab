@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 54244285092053112}
   - component: {fileID: 65677427819724358}
   - component: {fileID: 114176820257093566}
+  - component: {fileID: 114629775453728810}
   - component: {fileID: 95770062008468568}
   - component: {fileID: 114971818206434530}
   - component: {fileID: 114933706462116758}
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974140998628174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.32, y: 9.3, z: 0}
+  m_LocalPosition: {x: 83.20259, y: 58.525455, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4217846194047758}
@@ -183,6 +184,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11bd4703ce6c41e8b1e4b74d35f9205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114629775453728810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974140998628174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3d2cbc0b7e4504bbb2d75adbb4136d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition_time: 2
+  cam_delta: {x: 16, y: 11, z: 0}
+  player_delta: {x: 2, y: 2, z: 0}
 --- !u!114 &114933706462116758
 MonoBehaviour:
   m_ObjectHideFlags: 1
