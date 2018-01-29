@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4032567152290800}
   - component: {fileID: 212305972387216874}
   - component: {fileID: 65971961970869668}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: bomb_pickup
   m_TagString: bomb
   m_Icon: {fileID: 0}
